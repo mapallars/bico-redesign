@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FCFCFC;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#514532",
+                        "on-primary-fixed": "#271900",
+                        "primary-container": "#ffb500",
+                        "surface-tint": "#7d5700",
+                        "on-tertiary-fixed-variant": "#225100",
+                        "surface-container-high": "#f4e5dd",
+                        "surface-container-highest": "#eee0d7",
+                        "surface-bright": "#fff8f5",
+                        "tertiary-container": "#70db26",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#28180c",
+                        "on-tertiary-container": "#275b00",
+                        "outline-variant": "#d6c4ac",
+                        "secondary-fixed": "#fcddc8",
+                        "on-secondary-container": "#776050",
+                        "secondary-container": "#fcddc8",
+                        "tertiary-fixed": "#8efd49",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#372f29",
+                        "tertiary": "#2f6c00",
+                        "on-surface": "#211a15",
+                        "outline": "#837560",
+                        "secondary": "#705a4a",
+                        "inverse-primary": "#ffba30",
+                        "surface-container": "#faebe2",
+                        "on-secondary-fixed-variant": "#574334",
+                        "surface-container-low": "#fff1e9",
+                        "surface": "#fff8f5",
+                        "primary": "#7d5700",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#6b4a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#dec1ad",
+                        "primary-fixed-dim": "#ffba30",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "tertiary-fixed-dim": "#73df2b",
+                        "background": "#fff8f5",
+                        "surface-dim": "#e6d7cf",
+                        "on-background": "#211a15",
+                        "surface-variant": "#eee0d7",
+                        "primary-fixed": "#ffdeab",
+                        "on-tertiary-fixed": "#092100",
+                        "inverse-on-surface": "#fdeee5",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin-desktop": "40px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "container-margin-mobile": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Content Canvas -->
+<main class="min-h-screen flex flex-col items-center justify-between px-container-margin-mobile py-12 md:max-w-[1200px] md:mx-auto">
+<!-- Logo Header Section -->
+<header class="w-full flex justify-center mb-stack-lg">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<h1 class="text-title-lg font-title-lg font-bold text-primary tracking-tight">BICO</h1>
+</div>
+</header>
+<!-- Illustration Area: Bento-inspired layout for mobile focus -->
+<div class="relative w-full flex-grow flex flex-col items-center justify-center max-w-lg">
+<div class="relative w-full aspect-square md:aspect-video rounded-[40px] overflow-hidden shadow-[0px_12px_32px_rgba(92,71,56,0.12)] bg-surface-container-low transition-all duration-700 hover:scale-[1.02]">
+<img alt="Modern digital banking experience" class="w-full h-full object-cover" data-alt="A clean and modern digital banking illustration featuring a sleek smartphone floating in a minimalist room with warm sunlight. The screen shows vibrant financial charts and a 'BICO' logo in a high-key light-mode aesthetic. Soft shadows and a palette of warm whites and sunny yellows create a feeling of human security and local pride. The composition is airy and sophisticated, suggesting effortless financial control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgijYs7x-nokVGoEsvJy-_KTHO0inXyc6uaq9FnO41mj1m5DKFnc8xaHDRGU8vZaUqoJMvLXDuA0Tea9YfjyRcTQ4LqVPtDdA1fIJUzjIuf79bRFra_ZtynUn6ypetjFslzZqfPiNr3E5KWmVBU_QGK1My6gH6ey_fmQXldsQa_ZjRML-fneV0pS6-vuO0mx_5ISBpDWCM0sQlmbgv2pUIE9xo8hACJotFqkjmVWZquSbx4Z78LlTb6vC1VCXP4bu9mzmxjF7AujY"/>
+<!-- Floating Glassmorphism Cards for Aesthetic Depth -->
+<div class="absolute top-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-lg animate-bounce duration-[3000ms] flex items-center gap-3 border border-white/20">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">trending_up</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface opacity-60">Crecimiento</p>
+<p class="text-label-md font-label-md font-bold text-tertiary">+12.5%</p>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-lg flex items-center gap-3 border border-white/20">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">qr_code_2</span>
+</div>
+<p class="text-label-md font-label-md font-bold text-on-primary-container">Pagos QR Rápidos</p>
+</div>
+</div>
+<!-- Background subtle pattern -->
+<div class="absolute -z-10 w-[140%] h-[140%] opacity-10 pointer-events-none">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-fixed to-transparent rounded-full blur-3xl"></div>
+</div>
+</div>
+<!-- Text and Actions Section -->
+<div class="w-full max-w-md mt-stack-lg flex flex-col items-center text-center">
+<h2 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-on-background tracking-tight mb-4 leading-tight">
+                Tu dinero, <br/>
+<span class="text-primary italic">a tu ritmo.</span>
+</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-[85%] mb-stack-lg">
+                La banca moderna que entiende el campo y la ciudad. Segura, rápida y siempre contigo.
+            </p>
+<!-- Main Call to Action -->
+<div class="w-full space-y-4">
+<button class="group w-full h-[56px] bg-primary-container hover:bg-primary transition-all duration-300 rounded-2xl flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(92,71,56,0.1)] active:scale-95">
+<span class="text-on-primary-container group-hover:text-on-primary font-bold text-lg tracking-wide">Empezar</span>
+<span class="material-symbols-outlined text-on-primary-container group-hover:text-on-primary transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<button class="w-full h-[56px] bg-transparent hover:bg-surface-container-low transition-colors duration-300 rounded-2xl flex items-center justify-center">
+<span class="text-secondary font-semibold text-body-md">Ya tengo cuenta</span>
+</button>
+</div>
+</div>
+<!-- Progress/Step Indicators (Aesthetic) -->
+<div class="flex gap-2 mt-12">
+<div class="w-8 h-1.5 rounded-full bg-primary transition-all duration-300"></div>
+<div class="w-2 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-1.5 rounded-full bg-outline-variant"></div>
+</div>
+</main>
+<!-- Suppressed Navigation: Onboarding is task-focused/linear -->
+<!-- BottomNavBar and TopAppBar are excluded as per "Destination Rule" -->
+<script>
+        // Micro-interaction for the illustration parallax
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            const container = document.querySelector('.relative.w-full.aspect-square');
+            if(container) {
+                container.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            }
+        });
+
+        // Button active state interaction
+        const primaryBtn = document.querySelector('button');
+        primaryBtn.addEventListener('mousedown', () => {
+            primaryBtn.classList.add('scale-95');
+        });
+        primaryBtn.addEventListener('mouseup', () => {
+            primaryBtn.classList.remove('scale-95');
+        });
+    </script>
+</body></html>

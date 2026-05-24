@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .custom-shadow {
+            box-shadow: 0px 4px 20px rgba(92, 71, 56, 0.06);
+        }
+        .progress-fill {
+            transition: width 1s ease-out;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#514532",
+                        "on-primary-fixed": "#271900",
+                        "primary-container": "#ffb500",
+                        "surface-tint": "#7d5700",
+                        "on-tertiary-fixed-variant": "#225100",
+                        "surface-container-high": "#f4e5dd",
+                        "surface-container-highest": "#eee0d7",
+                        "surface-bright": "#fff8f5",
+                        "tertiary-container": "#70db26",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#28180c",
+                        "on-tertiary-container": "#275b00",
+                        "outline-variant": "#d6c4ac",
+                        "secondary-fixed": "#fcddc8",
+                        "on-secondary-container": "#776050",
+                        "secondary-container": "#fcddc8",
+                        "tertiary-fixed": "#8efd49",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#372f29",
+                        "tertiary": "#2f6c00",
+                        "on-surface": "#211a15",
+                        "outline": "#837560",
+                        "secondary": "#705a4a",
+                        "inverse-primary": "#ffba30",
+                        "surface-container": "#faebe2",
+                        "on-secondary-fixed-variant": "#574334",
+                        "surface-container-low": "#fff1e9",
+                        "surface": "#fff8f5",
+                        "primary": "#7d5700",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#6b4a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#dec1ad",
+                        "primary-fixed-dim": "#ffba30",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "tertiary-fixed-dim": "#73df2b",
+                        "background": "#fff8f5",
+                        "surface-dim": "#e6d7cf",
+                        "on-background": "#211a15",
+                        "surface-variant": "#eee0d7",
+                        "primary-fixed": "#ffdeab",
+                        "on-tertiary-fixed": "#092100",
+                        "inverse-on-surface": "#fdeee5",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin-desktop": "40px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "container-margin-mobile": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface flex justify-between items-center px-container-margin-mobile h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Profile" data-alt="A professional and warm close-up portrait of a modern agricultural entrepreneur in a bright, sunlit office environment. The subject wears clean, high-quality casual business attire, reflecting success and approachability. Soft morning light streams through large windows, creating a high-contrast yet gentle atmosphere that aligns with a premium financial application's aesthetic. The background is softly blurred, showing hints of greenery and modern wooden textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3hTV2L-Sy5lpwgHfqzmDRpURvdnz9lUPfNETl6N5AmK_JWlRTlEEh0M9JAqX5j1MN2oLQY5yKsCQ-2zFdTfAxRgSS6Jd7e5TcWI1n6Ld-xGU0bWR292xdBqhdfCPar7DxBK9o4XtFA5EkJnIJxlrfDg3TAOCz_yPBW1mm-vyY_14v0YvTldop4lSdAA68TAUQ9xTgW305vaxwP2pFO93LS0gFbc3_Q08rmIajHlERhtChvzLZwKD4sYwtlyEfu1xodhE1SJz60mY"/>
+</div>
+<span class="text-title-lg font-title-lg font-bold text-primary">BICO</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-container-margin-mobile max-w-2xl mx-auto">
+<!-- Hero Section for Bolsillos -->
+<section class="mb-stack-lg">
+<h1 class="text-display-lg-mobile font-display-lg-mobile text-on-surface mb-2">Mis Bolsillos</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Organiza tu dinero para cumplir tus metas de ahorro de forma segura.</p>
+</section>
+<!-- Summary Stats Bento-ish -->
+<div class="grid grid-cols-2 gap-stack-md mb-stack-lg">
+<div class="bg-surface-container-lowest p-5 rounded-xl custom-shadow border border-outline-variant/10">
+<span class="text-label-sm font-label-sm text-on-surface-variant block mb-1">Total Ahorrado</span>
+<span class="text-title-lg font-title-lg text-primary">$12.450.000</span>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl custom-shadow border border-outline-variant/10">
+<span class="text-label-sm font-label-sm text-on-surface-variant block mb-1">Metas Activas</span>
+<span class="text-title-lg font-title-lg text-primary">3</span>
+</div>
+</div>
+<!-- Pockets List -->
+<div class="space-y-4">
+<!-- Pocket 1: Ahorro -->
+<div class="bg-surface-container-lowest p-6 rounded-xl custom-shadow border border-outline-variant/10 group active:scale-[0.98] transition-all duration-200">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="savings">savings</span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Ahorro</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Fondo de Emergencia</span>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Saldo actual</span>
+<span class="text-headline-md font-headline-md text-on-surface">$5.200.000</span>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Meta: $10.000.000</span>
+<span class="block text-label-md font-label-md text-tertiary font-bold">52%</span>
+</div>
+</div>
+<!-- Custom Progress Bar -->
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-[#5BC500] progress-fill rounded-full" style="width: 52%"></div>
+</div>
+</div>
+</div>
+<!-- Pocket 2: Viajes -->
+<div class="bg-surface-container-lowest p-6 rounded-xl custom-shadow border border-outline-variant/10 group active:scale-[0.98] transition-all duration-200">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Viajes</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Vacaciones Familiares</span>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Saldo actual</span>
+<span class="text-headline-md font-headline-md text-on-surface">$4.500.000</span>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Meta: $6.000.000</span>
+<span class="block text-label-md font-label-md text-tertiary font-bold">75%</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-[#5BC500] progress-fill rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+<!-- Pocket 3: Renta -->
+<div class="bg-surface-container-lowest p-6 rounded-xl custom-shadow border border-outline-variant/10 group active:scale-[0.98] transition-all duration-200">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="real_estate_agent">real_estate_agent</span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-surface">Renta</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Pago Trimestral Terrenos</span>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Saldo actual</span>
+<span class="text-headline-md font-headline-md text-on-surface">$2.750.000</span>
+</div>
+<div class="text-right">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Meta: $3.000.000</span>
+<span class="block text-label-md font-label-md text-tertiary font-bold">92%</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-[#5BC500] progress-fill rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Card -->
+<div class="mt-8 bg-primary-container/10 border border-primary-container/30 p-6 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="info">info</span>
+<p class="text-label-md font-label-md text-on-primary-container">Tus bolsillos generan un 12% E.A. de rentabilidad diaria. ¡Sigue ahorrando!</p>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-16 h-16 bg-primary-container text-on-primary-container rounded-2xl shadow-lg flex items-center justify-center hover:bg-primary transition-all active:scale-90 z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface flex justify-around items-center px-2 py-3 pb-safe shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-3 py-1 scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm mt-1">Bolsillos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="text-label-sm font-label-sm mt-1">QR Pay</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-label-sm font-label-sm mt-1">Movimientos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for pocket cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('click', () => {
+                const progress = card.querySelector('.progress-fill');
+                const currentWidth = progress.style.width;
+                progress.style.width = '0%';
+                setTimeout(() => {
+                    progress.style.width = currentWidth;
+                }, 50);
+            });
+        });
+    </script>
+</body></html>
