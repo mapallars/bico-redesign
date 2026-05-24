@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>BICO - Registro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#514532",
+                        "on-primary-fixed": "#271900",
+                        "primary-container": "#ffb500",
+                        "surface-tint": "#7d5700",
+                        "on-tertiary-fixed-variant": "#225100",
+                        "surface-container-high": "#f4e5dd",
+                        "surface-container-highest": "#eee0d7",
+                        "surface-bright": "#fff8f5",
+                        "tertiary-container": "#70db26",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#28180c",
+                        "on-tertiary-container": "#275b00",
+                        "outline-variant": "#d6c4ac",
+                        "secondary-fixed": "#fcddc8",
+                        "on-secondary-container": "#776050",
+                        "secondary-container": "#fcddc8",
+                        "tertiary-fixed": "#8efd49",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#372f29",
+                        "tertiary": "#2f6c00",
+                        "on-surface": "#211a15",
+                        "outline": "#837560",
+                        "secondary": "#705a4a",
+                        "inverse-primary": "#ffba30",
+                        "surface-container": "#faebe2",
+                        "on-secondary-fixed-variant": "#574334",
+                        "surface-container-low": "#fff1e9",
+                        "surface": "#fff8f5",
+                        "primary": "#7d5700",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#6b4a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#dec1ad",
+                        "primary-fixed-dim": "#ffba30",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "tertiary-fixed-dim": "#73df2b",
+                        "background": "#fff8f5",
+                        "surface-dim": "#e6d7cf",
+                        "on-background": "#211a15",
+                        "surface-variant": "#eee0d7",
+                        "primary-fixed": "#ffdeab",
+                        "on-tertiary-fixed": "#092100",
+                        "inverse-on-surface": "#fdeee5",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin-desktop": "40px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "container-margin-mobile": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8f5;
+            color: #211a15;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .step-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        .custom-shadow {
+            box-shadow: 0px 4px 20px rgba(92, 71, 56, 0.06);
+        }
+        .progress-line {
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- Top App Bar (Simulated Context) -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 z-40">
+<div class="flex justify-between items-center w-full px-container-margin-mobile h-16 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors" onclick="window.history.back()">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<span class="text-title-lg font-title-lg font-bold text-primary dark:text-primary-fixed-dim">BICO</span>
+</div>
+<div class="text-label-md font-label-md text-on-surface-variant">
+                Paso <span id="current-step-label">1</span> de 3
+            </div>
+</div>
+</header>
+<main class="flex-grow flex flex-col px-container-margin-mobile pt-4 pb-12 max-w-[600px] mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="w-full bg-surface-container-highest h-1 rounded-full mb-8 relative overflow-hidden">
+<div class="progress-line absolute left-0 top-0 h-full bg-primary-container" id="progress-bar" style="width: 33.33%;"></div>
+</div>
+<!-- Header Section -->
+<div class="mb-10 text-center">
+<h1 class="text-display-lg-mobile font-display-lg-mobile text-on-surface mb-2">Crea tu cuenta en pocos minutos</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Comencemos con tus datos básicos para asegurar tu identidad en BICO.</p>
+</div>
+<!-- Form Canvas -->
+<form class="flex flex-col flex-grow" id="registration-form">
+<!-- Step 1: Personal Data -->
+<div class="step-content space-y-6" id="step-1">
+<div class="bg-surface-container-lowest p-6 rounded-xl custom-shadow space-y-5">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Nombre completo</label>
+<input class="w-full h-14 px-4 rounded-lg border border-[#5C4738]/20 focus:border-[#418FE9] focus:ring-0 outline-none text-body-md font-body-md transition-all" placeholder="Ej. Juan Pérez" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Correo electrónico</label>
+<input class="w-full h-14 px-4 rounded-lg border border-[#5C4738]/20 focus:border-[#418FE9] focus:ring-0 outline-none text-body-md font-body-md transition-all" placeholder="juan@ejemplo.com" required="" type="email"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Documento de identidad</label>
+<div class="flex gap-2">
+<select class="w-24 h-14 px-2 rounded-lg border border-[#5C4738]/20 focus:border-[#418FE9] outline-none text-label-md font-label-md">
+<option>CC</option>
+<option>CE</option>
+<option>NIT</option>
+</select>
+<input class="flex-grow h-14 px-4 rounded-lg border border-[#5C4738]/20 focus:border-[#418FE9] focus:ring-0 outline-none text-body-md font-body-md transition-all" placeholder="Número" required="" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2: Phone Validation (Hidden initially) -->
+<div class="step-content hidden space-y-6" id="step-2">
+<div class="bg-surface-container-lowest p-6 rounded-xl custom-shadow space-y-6">
+<div class="flex items-center justify-center p-4 bg-surface-container rounded-full w-20 h-20 mx-auto">
+<span class="material-symbols-outlined text-[40px] text-primary">smartphone</span>
+</div>
+<div class="text-center">
+<h3 class="text-title-lg font-title-lg text-on-surface">Valida tu número</h3>
+<p class="text-label-md font-label-md text-on-surface-variant mt-1">Te enviaremos un código SMS para verificar tu equipo.</p>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Número de celular</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-body-md font-body-md text-on-surface-variant">+57</span>
+<input class="w-full h-14 pl-14 pr-4 rounded-lg border border-[#5C4738]/20 focus:border-[#418FE9] focus:ring-0 outline-none text-body-md font-body-md transition-all" placeholder="300 123 4567" required="" type="tel"/>
+</div>
+</div>
+<div class="hidden space-y-4" id="otp-container">
+<div class="flex justify-between gap-2">
+<input class="w-12 h-14 text-center text-title-lg font-title-lg border border-[#5C4738]/20 rounded-lg focus:border-[#418FE9] focus:ring-0 outline-none" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-title-lg font-title-lg border border-[#5C4738]/20 rounded-lg focus:border-[#418FE9] focus:ring-0 outline-none" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-title-lg font-title-lg border border-[#5C4738]/20 rounded-lg focus:border-[#418FE9] focus:ring-0 outline-none" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-title-lg font-title-lg border border-[#5C4738]/20 rounded-lg focus:border-[#418FE9] focus:ring-0 outline-none" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-title-lg font-title-lg border border-[#5C4738]/20 rounded-lg focus:border-[#418FE9] focus:ring-0 outline-none" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-title-lg font-title-lg border border-[#5C4738]/20 rounded-lg focus:border-[#418FE9] focus:ring-0 outline-none" maxlength="1" type="text"/>
+</div>
+<button class="text-label-md font-label-md text-primary w-full text-center py-2" type="button">Reenviar código (00:45)</button>
+</div>
+</div>
+</div>
+<!-- Step 3: Security Setup (Hidden initially) -->
+<div class="step-content hidden space-y-6" id="step-3">
+<div class="bg-surface-container-lowest p-6 rounded-xl custom-shadow space-y-5">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Define tu contraseña</label>
+<div class="relative">
+<input class="w-full h-14 px-4 rounded-lg border border-[#5C4738]/20 focus:border-[#418FE9] focus:ring-0 outline-none text-body-md font-body-md transition-all" id="password-input" placeholder="Mínimo 8 caracteres" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+<!-- Strength Meter -->
+<div class="mt-3 flex gap-1 h-1.5">
+<div class="flex-grow bg-surface-container-high rounded-full" id="strength-1"></div>
+<div class="flex-grow bg-surface-container-high rounded-full" id="strength-2"></div>
+<div class="flex-grow bg-surface-container-high rounded-full" id="strength-3"></div>
+<div class="flex-grow bg-surface-container-high rounded-full" id="strength-4"></div>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-2" id="password-hint">Usa letras, números y al menos un símbolo.</p>
+</div>
+<div class="pt-4 border-t border-secondary/10">
+<div class="flex items-center gap-3">
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative cursor-pointer p-1 transition-colors" onclick="this.classList.toggle('bg-tertiary-container')">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm transform transition-transform duration-200"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface">Activar Biometría (Huella/Cara)</span>
+</div>
+</div>
+</div>
+<div class="bg-primary-container/10 p-4 rounded-lg flex gap-3">
+<span class="material-symbols-outlined text-primary">security</span>
+<p class="text-label-sm font-label-sm text-on-primary-container">Toda tu información está cifrada bajo estándares bancarios internacionales.</p>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-auto pt-10">
+<button class="w-full h-[56px] bg-[#FFB500] text-[#5C4738] font-bold rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform" id="next-btn" type="button">
+<span>Continuar</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-label-sm font-label-sm text-on-surface-variant mt-6 px-4" id="terms-text">
+                    Al continuar, aceptas nuestros <a class="text-primary underline" href="#">Términos y Condiciones</a> y el tratamiento de tus datos personales.
+                </p>
+</div>
+</form>
+</main>
+<!-- Side Image / Decor (Visible on Desktop) -->
+<div class="hidden md:block fixed right-0 top-0 w-1/3 h-full overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="A serene landscape of rolling green hills in a rural farming region during a golden sunset, symbolizing growth and stability. In the foreground, a close-up of a farmer's hand holding a sleek, modern smartphone with a clean financial app interface. The lighting is warm and natural, evoking a sense of human security and local pride. The overall aesthetic is minimalist and high-end, blending agricultural heritage with cutting-edge digital banking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtGCytkuHtGcEMXjWehvfutsOlceS9E_xY-etP3WtBFxtPYJBZ8jCdkXWAfj1AWqUHG29JdhDlqKvBUNOfuBANpIlmsGF1d6eJQ1tT4uYqCwGKMTz5e_yoRyLux4NgMbSP4KgfiZfW37_-0kuP67L2W1beounaCKuO3wPA2lDpOvICPu6i_5fXQUQ1KGmyH0mFrGlTxhA6ZhoZIHntwfnmN1Wem8N6jLXA2diEEU2mzavMf6Tb_fVmy3-x0It8tt8Xac7noc4Bc6c"/>
+<div class="absolute inset-0 bg-gradient-to-l from-transparent to-background/40"></div>
+</div>
+<script>
+        let currentStep = 1;
+        const totalSteps = 3;
+        const nextBtn = document.getElementById('next-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const currentStepLabel = document.getElementById('current-step-label');
+        const passwordInput = document.getElementById('password-input');
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                // Hide current step
+                document.getElementById(`step-${currentStep}`).classList.add('hidden');
+                
+                // Show next step
+                currentStep++;
+                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+                
+                // Update UI indicators
+                updateProgress();
+
+                // Custom logic for step 2: show OTP after input
+                if (currentStep === 2) {
+                    setTimeout(() => {
+                        document.getElementById('otp-container').classList.remove('hidden');
+                    }, 500);
+                }
+
+                if (currentStep === 3) {
+                    nextBtn.querySelector('span:first-child').textContent = 'Crear cuenta';
+                    document.getElementById('terms-text').classList.add('opacity-0');
+                }
+            } else {
+                // Final submission
+                nextBtn.innerHTML = '<span class="animate-spin material-symbols-outlined">sync</span>';
+                setTimeout(() => {
+                    alert('¡Cuenta creada exitosamente! Bienvenido a BICO.');
+                }, 1500);
+            }
+        });
+
+        function updateProgress() {
+            const width = (currentStep / totalSteps) * 100;
+            progressBar.style.width = `${width}%`;
+            currentStepLabel.textContent = currentStep;
+        }
+
+        // Password Strength logic
+        passwordInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            const strengths = [
+                document.getElementById('strength-1'),
+                document.getElementById('strength-2'),
+                document.getElementById('strength-3'),
+                document.getElementById('strength-4')
+            ];
+            
+            // Simple visual logic
+            strengths.forEach(s => s.className = 'flex-grow bg-surface-container-high rounded-full');
+            
+            if (val.length > 0) strengths[0].className = 'flex-grow bg-error rounded-full';
+            if (val.length > 4) {
+                strengths[0].className = 'flex-grow bg-primary-container rounded-full';
+                strengths[1].className = 'flex-grow bg-primary-container rounded-full';
+            }
+            if (val.length > 8) {
+                strengths[0].className = 'flex-grow bg-tertiary-container rounded-full';
+                strengths[1].className = 'flex-grow bg-tertiary-container rounded-full';
+                strengths[2].className = 'flex-grow bg-tertiary-container rounded-full';
+            }
+            if (val.length > 10 && /[!@#$%^&*]/.test(val)) {
+                strengths.forEach(s => s.className = 'flex-grow bg-tertiary rounded-full');
+            }
+        });
+
+        // OTP auto-focus
+        const otpInputs = document.querySelectorAll('#otp-container input');
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body></html>
