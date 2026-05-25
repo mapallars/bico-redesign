@@ -148,7 +148,7 @@
         <div class="flex items-center gap-4">
             <button
                 class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-150"
-                onclick="window.history.back()">
+                onclick="goHome()">
                 <span class="material-symbols-outlined text-primary">arrow_back</span>
             </button>
             <span class="text-title-lg font-title-lg font-bold text-primary">Meter Plata</span>
@@ -217,7 +217,7 @@
                 <p class="text-label-md text-on-surface-variant mb-3">Sugerencias</p>
                 <div class="flex gap-2 mb-2 overflow-x-auto pb-2 no-scrollbar">
                     <button
-                        class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant"
+                        class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors"
                         onclick="setAmount(10000, this)">10k</button>
                     <button
                         class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant"
@@ -325,7 +325,7 @@
                 btn.disabled = true;
             }
         }
-        
+
         document.getElementById('continue-btn').addEventListener('click', (e) => {
             const btn = e.target;
             const originalText = btn.innerHTML;
@@ -334,7 +334,12 @@
                 window.location.href = '../home/index.html';
             }, 1000);
         });
+
+        function goHome() {
+            window.location.href = '../home/index.html';
+        }
     </script>
+    <script src="../core/js/validation.js"></script>
     <script src="../core/js/navigation.js"></script>
 </body>
 

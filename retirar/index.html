@@ -138,7 +138,7 @@
     <div class="flex items-center gap-4">
       <button
         class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-150"
-        onclick="window.history.back()">
+        onclick="goBack()">
         <span class="material-symbols-outlined text-primary">arrow_back</span>
       </button>
       <span class="text-title-lg font-title-lg font-bold text-primary">Sacar Plata</span>
@@ -381,8 +381,13 @@
         }
       }, 1000);
     }
+
+    function goBack() {
+      window.location.href = '../home/index.html';
+    }
   </script>
-    <script src="../core/js/navigation.js"></script>
+  <script src="../core/js/validation.js"></script>
+  <script src="../core/js/navigation.js"></script>
 </body>
 
 </html>

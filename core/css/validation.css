@@ -1,0 +1,23 @@
+/* core/css/validation.css */
+.input-invalid {
+    border-color: #ba1a1a !important; /* Tailwind error color */
+    box-shadow: 0 0 0 1px #ba1a1a !important;
+}
+
+.input-valid {
+    border-color: #2f6c00 !important; /* Tailwind tertiary color */
+}
+
+.error-message {
+    color: #ba1a1a;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: 500;
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}

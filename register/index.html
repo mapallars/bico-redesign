@@ -157,7 +157,7 @@
             <div class="flex items-center gap-1">
                 <button
                     class="w-[40px] h-[40px] p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors"
-                    onclick="window.history.back()">
+                    onclick="goOnboarding()">
                     <span class="material-symbols-outlined text-primary">arrow_back</span>
                 </button>
                 <img class="h-[25px]" src="../public/logotype.png" alt="" />
@@ -413,7 +413,12 @@
                 }
             });
         });
+
+        function goOnboarding() {
+            window.location.href = "../onboarding/index.html";
+        }
     </script>
+    <script src="../core/js/validation.js"></script>
     <script src="../core/js/navigation.js"></script>
 </body>
 
