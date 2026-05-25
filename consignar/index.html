@@ -239,7 +239,21 @@
                 Continuar recarga
             </button>
         </div>
+        </div>
     </main>
+
+    <!-- Consignar Confirmation Modal -->
+    <div id="consignar-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity opacity-0">
+        <div class="bg-surface rounded-2xl p-6 w-[90%] max-w-sm shadow-2xl transform scale-95 transition-transform duration-300">
+            <div class="w-16 h-16 bg-[#5BC500]/10 text-[#225100] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <h3 class="text-title-lg font-title-lg text-center text-on-surface mb-2">¡Recarga Exitosa!</h3>
+            <p class="text-body-md font-body-md text-center text-on-surface-variant mb-6">Tu dinero ya está disponible en tu cuenta BICO.</p>
+            <button onclick="window.location.href = '../home/index.html'" class="w-full h-12 bg-primary-container text-on-primary-container font-bold rounded-xl active:scale-95 transition-transform">Volver al Inicio</button>
+        </div>
+    </div>
+
     <!-- BottomNavBar -->
     <nav
         class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
@@ -331,7 +345,14 @@
             const originalText = btn.innerHTML;
             btn.innerHTML = 'Procesando...';
             setTimeout(() => {
-                window.location.href = '../home/index.html';
+                btn.innerHTML = 'Continuar recarga';
+                const modal = document.getElementById('consignar-modal');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modal.querySelector('div').classList.remove('scale-95');
+                }, 50);
             }, 1000);
         });
 

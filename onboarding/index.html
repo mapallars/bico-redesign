@@ -173,35 +173,40 @@
         </div>
         <!-- Text and Actions Section -->
         <div class="w-full max-w-md mt-stack-lg flex flex-col items-center text-center">
-            <h2
-                class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-on-background tracking-tight mb-4 leading-tight">
-                Tu dinero, <br />
-                <span class="text-primary italic">a tu ritmo.</span>
-            </h2>
-            <p class="text-body-lg font-body-lg text-on-surface-variant max-w-[85%] mb-stack-lg">
-                La banca moderna que entiende el campo y la ciudad. Segura, rápida y siempre contigo.
-            </p>
+            <div class="h-[140px] flex flex-col items-center justify-start w-full">
+                <h2 id="carousel-title"
+                    class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-on-background tracking-tight mb-4 leading-tight transition-opacity duration-500">
+                    Tu dinero, <br />
+                    <span class="text-primary italic">a tu ritmo.</span>
+                </h2>
+                <p id="carousel-desc"
+                    class="text-body-lg font-body-lg text-on-surface-variant max-w-[85%] mb-stack-lg transition-opacity duration-500">
+                    La banca moderna que entiende el campo y la ciudad. Segura, rápida y siempre contigo.
+                </p>
+            </div>
+            <!-- Progress/Step Indicators (Aesthetic) -->
+            <div class="flex gap-2 mt-12" id="carousel-dots">
+                <div class="w-8 h-1.5 rounded-full bg-primary transition-all duration-300"></div>
+                <div class="w-2 h-1.5 rounded-full bg-outline-variant transition-all duration-300"></div>
+                <div class="w-2 h-1.5 rounded-full bg-outline-variant transition-all duration-300"></div>
+            </div>
+            <br>
             <!-- Main Call to Action -->
             <div class="w-full space-y-4">
                 <button id="start-button"
                     class="group w-full h-[56px] bg-primary-container hover:bg-primary transition-all duration-300 rounded-2xl flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(92,71,56,0.1)] active:scale-95">
                     <span
-                        class="text-on-primary-container group-hover:text-on-primary font-bold text-lg tracking-wide">Empezar</span>
+                        class="text-on-primary-container group-hover:text-on-primary font-bold text-lg tracking-wide">Registrarse</span>
                     <span
                         class="material-symbols-outlined text-on-primary-container group-hover:text-on-primary transition-transform group-hover:translate-x-1">arrow_forward</span>
                 </button>
                 <button id="sign-in-button"
                     class="w-full h-[56px] bg-transparent hover:bg-surface-container-low transition-colors duration-300 rounded-2xl flex items-center justify-center">
-                    <span class="text-secondary font-semibold text-body-md">Ya tengo cuenta</span>
+                    <span class="text-secondary font-semibold text-body-md">Iniciar Sesión</span>
                 </button>
             </div>
         </div>
-        <!-- Progress/Step Indicators (Aesthetic) -->
-        <div class="flex gap-2 mt-12">
-            <div class="w-8 h-1.5 rounded-full bg-primary transition-all duration-300"></div>
-            <div class="w-2 h-1.5 rounded-full bg-outline-variant"></div>
-            <div class="w-2 h-1.5 rounded-full bg-outline-variant"></div>
-        </div>
+
     </main>
     <!-- Suppressed Navigation: Onboarding is task-focused/linear -->
     <!-- BottomNavBar and TopAppBar are excluded as per "Destination Rule" -->
@@ -232,6 +237,52 @@
         document.getElementById('sign-in-button').addEventListener('click', () => {
             window.location.href = '../login/index.html';
         });
+
+        // Carousel functionality
+        const carouselData = [
+            {
+                title: 'Tu dinero, <br /> <span class="text-primary italic">a tu ritmo.</span>',
+                desc: 'La banca moderna que entiende el campo y la ciudad. Segura, rápida y siempre contigo.'
+            },
+            {
+                title: 'Sin filas, <br /> <span class="text-primary italic">sin demoras.</span>',
+                desc: 'Realiza todas tus transacciones desde la comodidad de tu casa o donde estés.'
+            },
+            {
+                title: 'Control total <br /> <span class="text-primary italic">de tus gastos.</span>',
+                desc: 'Mantén un registro claro y organizado de tu dinero con BICO.'
+            }
+        ];
+
+        let currentSlide = 0;
+        const titleEl = document.getElementById('carousel-title');
+        const descEl = document.getElementById('carousel-desc');
+        const dots = document.getElementById('carousel-dots').children;
+
+        setInterval(() => {
+            // Fade out
+            titleEl.style.opacity = '0';
+            descEl.style.opacity = '0';
+
+            setTimeout(() => {
+                currentSlide = (currentSlide + 1) % carouselData.length;
+                titleEl.innerHTML = carouselData[currentSlide].title;
+                descEl.innerHTML = carouselData[currentSlide].desc;
+
+                // Update dots
+                Array.from(dots).forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.className = 'w-8 h-1.5 rounded-full bg-primary transition-all duration-300';
+                    } else {
+                        dot.className = 'w-2 h-1.5 rounded-full bg-outline-variant transition-all duration-300';
+                    }
+                });
+
+                // Fade in
+                titleEl.style.opacity = '1';
+                descEl.style.opacity = '1';
+            }, 500); // Wait for fade out
+        }, 3000);
     </script>
     <script src="../core/js/animations.js"></script>
     <script src="../core/js/validation.js"></script>
