@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <title>BICO - Pagar con QR</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#7d5700",
+                        "surface-container": "#faebe2",
+                        "on-background": "#211a15",
+                        "surface-container-highest": "#eee0d7",
+                        "on-tertiary-container": "#275b00",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#fff1e9",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#d6c4ac",
+                        "on-tertiary-fixed": "#092100",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#e6d7cf",
+                        "secondary-container": "#fcddc8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fff8f5",
+                        "on-primary-container": "#6b4a00",
+                        "outline": "#837560",
+                        "on-secondary-container": "#776050",
+                        "surface-bright": "#fff8f5",
+                        "background": "#fff8f5",
+                        "tertiary-fixed": "#8efd49",
+                        "tertiary": "#2f6c00",
+                        "on-surface-variant": "#514532",
+                        "on-secondary-fixed-variant": "#574334",
+                        "on-error-container": "#93000a",
+                        "secondary": "#705a4a",
+                        "surface-variant": "#eee0d7",
+                        "primary-fixed-dim": "#ffba30",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "secondary-fixed-dim": "#dec1ad",
+                        "primary-fixed": "#ffdeab",
+                        "tertiary-container": "#70db26",
+                        "inverse-primary": "#ffba30",
+                        "on-tertiary-fixed-variant": "#225100",
+                        "primary-container": "#ffb500",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#271900",
+                        "inverse-on-surface": "#fdeee5",
+                        "surface-container-high": "#f4e5dd",
+                        "secondary-fixed": "#fcddc8",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#7d5700",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#73df2b",
+                        "inverse-surface": "#372f29",
+                        "on-surface": "#211a15",
+                        "on-secondary-fixed": "#28180c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-margin-desktop": "40px",
+                        "container-margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FCFCFC;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .active-tab-indicator {
+            height: 2px;
+            bottom: 0;
+            background-color: #7d5700;
+            transition: all 0.3s ease;
+        }
+
+        .qr-card-shadow {
+            box-shadow: 0px 4px 20px rgba(92, 71, 56, 0.06);
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="text-on-surface">
+    <!-- TopAppBar -->
+    <header class="bg-surface dark:bg-surface-dim sticky top-0 z-50 flex justify-between items-center w-full px-4 h-16">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary">
+                <img alt="Perfil" class="w-full h-full object-cover"
+                    data-alt="A professional close-up portrait of a friendly Hispanic man in his late 30s with a warm smile, set against a soft, sun-drenched rural Colombian landscape. The lighting is natural and high-key, emphasizing a light-mode aesthetic. The color palette features earthy tones, soft browns, and golden hues that reflect a secure and grounded financial institution."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgRhkFxuEGX1Dc0qL-Kb4F-jHPLeY-2o1oLd3EQRbiXmzCQRqrQrbkTEgNjmlakXZBHSkkx08WLq-xXeNZ0TTdkVjhTZ3BOjc-IXZ1zyxY_s4QC-Wk0X4aZg-mhF-OObRMjCLIWJjUss9Aa72kL4R0zslaA7Rrn1igRp5TatEoyFWAgpafGDjjIsiWSu8WYwEsPhbdjfPZ8QDYzPKML0mYpBF35whvhxy4TWoCB_O3vAilpx8Y8AXR83xnzbTgkxFhGm1ZYEh91MzS" />
+            </div>
+            <img class="h-[25px]" src="../public/logotype.png" alt="BICO" />
+        </div>
+        <button
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+            <span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+        </button>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="pb-24 min-h-screen flex flex-col">
+        <!-- Tab Selector -->
+        <div class="flex w-full bg-surface-container-lowest border-b border-outline-variant/10">
+            <button
+                class="flex-1 py-4 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+                Escanear
+            </button>
+            <button class="flex-1 py-4 text-label-md font-label-md text-primary font-bold border-b-2 border-primary">
+                Mi QR
+            </button>
+        </div>
+        <div
+            class="flex-1 flex flex-col items-center justify-center px-container-margin-mobile py-stack-lg gap-stack-lg">
+            <!-- Description -->
+            <p class="text-body-md font-body-md text-on-surface-variant text-center max-w-[280px]">
+                Muestra este código para recibir dinero de otros usuarios BICO.
+            </p>
+            <!-- QR Card -->
+            <div
+                class="w-full max-w-sm aspect-square bg-white rounded-3xl p-8 qr-card-shadow flex items-center justify-center relative overflow-hidden">
+                <!-- Decorative background elements -->
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
+                <!-- Simulated QR Code -->
+                <div
+                    class="relative w-full h-full p-4 border-2 border-primary-container/20 rounded-2xl flex items-center justify-center">
+                    <img alt="QR Code" class="w-full h-full object-contain mix-blend-multiply"
+                        data-alt="A clean, minimalist QR code centered on a pristine white background. The QR code features precise dark brown patterns that reflect a professional financial tool. Around the code is a subtle, elegant border with rounded corners. The overall feel is modern, secure, and technologically advanced, fitting into a high-end banking interface."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBJt5TaxDysRKTU59_hLJiP0lrC0oWsGMfceoey6YD6R5DCYx5uCX-EtCMXG_xoOZmFzrGjp4gIb3hcJ5bBOYVlfRDQGDGE-0doOOlCYYkZFKz84FjSaPNvPxctZKwT5qAZposGUr6ihEf_KQSPJmy7xDpPjOGUw8zDW9p8C8xb5ceyTo1TthJEF5iErV8RdvXxc8aFMVkwehygmACeknZUeXpjLUotrd8oBayKMIjce2QC6SAHqpgSpkgaW7cwShHg84jA0bAl49V" />
+                    <!-- App Logo in Center of QR (Optional visual flourish) -->
+                    <div class="absolute bg-white p-1.5 rounded-lg shadow-sm border border-outline-variant/10">
+                        <div class="w-6 h-6 bg-primary-container rounded flex items-center justify-center">
+                            <span class="text-[10px] font-bold text-on-primary-container">B</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Action Buttons -->
+            <div class="w-full max-w-sm flex flex-col gap-stack-md mt-stack-md">
+                <button
+                    class="w-full h-14 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-2xl flex items-center justify-center gap-2 hover:brightness-95 active:scale-95 transition-all shadow-sm">
+                    <span class="material-symbols-outlined text-[20px]">share</span>
+                    Compartir QR
+                </button>
+                <button
+                    class="w-full h-14 border border-outline-variant/30 text-on-surface-variant font-label-md text-label-md rounded-2xl flex items-center justify-center gap-2 hover:bg-surface-container-low active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[20px]">download</span>
+                    Guardar imagen
+                </button>
+            </div>
+            <!-- Perfil context under QR -->
+            <div class="mt-4 flex flex-col items-center">
+                <span class="text-label-sm font-label-sm text-outline uppercase tracking-widest mb-1">Mi Identificador
+                    BICO</span>
+                <span class="text-title-lg font-title-lg font-bold text-on-surface">@juan.valdez</span>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface dark:bg-surface-dim shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-2xl">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-label-sm font-label-sm mt-1">Home</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-2xl">
+            <span class="material-symbols-outlined">account_balance_wallet</span>
+            <span class="text-label-sm font-label-sm mt-1">Bolsillos</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-2xl px-3 py-1 active:scale-90 transition-transform duration-200">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+            <span class="text-label-sm font-label-sm mt-1">QR</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-2xl">
+            <span class="material-symbols-outlined">history</span>
+            <span class="text-label-sm font-label-sm mt-1">Movimientos</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors rounded-2xl">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-label-sm font-label-sm mt-1">Perfil</span>
+        </button>
+    </nav>
+    <script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('touchstart', function () {
+                this.style.opacity = '0.7';
+            });
+            button.addEventListener('touchend', function () {
+                this.style.opacity = '1';
+            });
+        });
+
+        // Simple tab switching logic (visual only for this prototype)
+        const tabs = document.querySelectorAll('.text-label-md');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // In a real app, this would route or change view
+                console.log('Tab changed to: ' + tab.innerText);
+            });
+        });
+    </script>
+</body>
+
+</html>

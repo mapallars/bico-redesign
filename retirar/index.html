@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>BICO - Sacar Plata</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#514532",
+            "on-primary-fixed": "#271900",
+            "primary-container": "#ffb500",
+            "surface-tint": "#7d5700",
+            "on-tertiary-fixed-variant": "#225100",
+            "surface-container-high": "#f4e5dd",
+            "surface-container-highest": "#eee0d7",
+            "surface-bright": "#fff8f5",
+            "tertiary-container": "#70db26",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#28180c",
+            "on-tertiary-container": "#275b00",
+            "outline-variant": "#d6c4ac",
+            "secondary-fixed": "#fcddc8",
+            "on-secondary-container": "#776050",
+            "secondary-container": "#fcddc8",
+            "tertiary-fixed": "#8efd49",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#372f29",
+            "tertiary": "#2f6c00",
+            "on-surface": "#211a15",
+            "outline": "#837560",
+            "secondary": "#705a4a",
+            "inverse-primary": "#ffba30",
+            "surface-container": "#faebe2",
+            "on-secondary-fixed-variant": "#574334",
+            "surface-container-low": "#fff1e9",
+            "surface": "#fff8f5",
+            "primary": "#7d5700",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#6b4a00",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#dec1ad",
+            "primary-fixed-dim": "#ffba30",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#5f4100",
+            "tertiary-fixed-dim": "#73df2b",
+            "background": "#fff8f5",
+            "surface-dim": "#e6d7cf",
+            "on-background": "#211a15",
+            "surface-variant": "#eee0d7",
+            "primary-fixed": "#ffdeab",
+            "on-tertiary-fixed": "#092100",
+            "inverse-on-surface": "#fdeee5",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "container-margin-desktop": "40px",
+            "stack-md": "16px",
+            "unit": "8px",
+            "gutter": "16px",
+            "stack-lg": "32px",
+            "container-margin-mobile": "16px",
+            "stack-sm": "8px"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "title-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .step-hidden {
+      display: none;
+    }
+
+    .otp-timer-ring {
+      transition: stroke-dashoffset 1s linear;
+      stroke-dasharray: 100 100;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+  <!-- TopAppBar -->
+  <nav class="sticky top-0 z-50 bg-surface flex justify-between items-center w-full px-container-margin-mobile h-16">
+    <div class="flex items-center gap-4">
+      <button
+        class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-150"
+        onclick="window.history.back()">
+        <span class="material-symbols-outlined text-primary">arrow_back</span>
+      </button>
+      <span class="text-title-lg font-title-lg font-bold text-primary">Sacar Plata</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">notifications</span>
+    </div>
+  </nav>
+  <main class="flex-grow px-container-margin-mobile pt-stack-md pb-32 max-w-md mx-auto w-full">
+    <!-- Step 1: Selection & Amount -->
+    <section class="space-y-stack-lg" id="step1">
+      <div class="space-y-stack-md">
+        <p class="text-label-md font-label-md text-on-surface-variant">¿Dónde vas a retirar?</p>
+        <div class="grid grid-cols-2 gap-stack-md">
+          <label class="relative block cursor-pointer group">
+            <input checked="" class="peer sr-only" name="withdrawal_type" type="radio" value="atm" />
+            <div
+              class="p-stack-md bg-surface-container-lowest border-2 border-transparent rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] peer-checked:border-primary peer-checked:bg-surface-container-low transition-all">
+              <span class="material-symbols-outlined text-primary mb-2 block">atm</span>
+              <span class="text-label-md font-label-md block">Retiro en Cajero</span>
+            </div>
+          </label>
+          <label class="relative block cursor-pointer group">
+            <input class="peer sr-only" name="withdrawal_type" type="radio" value="agent" />
+            <div
+              class="p-stack-md bg-surface-container-lowest border-2 border-transparent rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] peer-checked:border-primary peer-checked:bg-surface-container-low transition-all">
+              <span class="material-symbols-outlined text-primary mb-2 block">store</span>
+              <span class="text-label-md font-label-md block">Corresponsal</span>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div
+        class="space-y-stack-md bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)]">
+        <label class="text-label-md font-label-md text-on-surface-variant block" for="amount">Monto a retirar</label>
+        <div class="relative">
+          <span
+            class="absolute left-0 top-1/2 -translate-y-1/2 text-headline-md font-headline-md text-on-surface-variant">$</span>
+          <input autofocus=""
+            class="w-full pl-8 py-2 bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-display-lg-mobile font-display-lg-mobile transition-all outline-none"
+            id="amount" placeholder="0" type="number" />
+        </div>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <button
+            class="px-4 py-2 bg-surface-container-high rounded-full text-label-md font-label-md hover:bg-primary-fixed-dim transition-colors"
+            onclick="setAmount(20000)">$20.000</button>
+          <button
+            class="px-4 py-2 bg-surface-container-high rounded-full text-label-md font-label-md hover:bg-primary-fixed-dim transition-colors"
+            onclick="setAmount(50000)">$50.000</button>
+          <button
+            class="px-4 py-2 bg-surface-container-high rounded-full text-label-md font-label-md hover:bg-primary-fixed-dim transition-colors"
+            onclick="setAmount(100000)">$100.000</button>
+        </div>
+      </div>
+      <div class="bg-surface-container-high/30 p-4 rounded-xl flex gap-3 border border-outline-variant/20">
+        <span class="material-symbols-outlined text-primary shrink-0">info</span>
+        <p class="text-label-sm font-label-sm text-on-surface-variant">Puedes retirar hasta $2.000.000 diarios en
+          cajeros automáticos autorizados.</p>
+      </div>
+      <button
+        class="w-full h-14 bg-primary-container text-on-primary-container font-bold rounded-xl shadow-lg hover:brightness-105 active:scale-95 transition-all"
+        onclick="goToStep2()">Continuar</button>
+    </section>
+    <!-- Step 2: Confirmation -->
+    <section class="step-hidden space-y-stack-lg" id="step2">
+      <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] space-y-4">
+        <h2 class="text-title-lg font-title-lg text-on-surface">Confirma tu retiro</h2>
+        <div class="space-y-3 pt-2">
+          <div class="flex justify-between items-center text-body-md font-body-md">
+            <span class="text-on-surface-variant">Monto</span>
+            <span class="font-bold" id="confirm-amount">$0</span>
+          </div>
+          <div class="flex justify-between items-center text-body-md font-body-md">
+            <span class="text-on-surface-variant">Costo de retiro</span>
+            <span class="text-tertiary font-bold">$0 (Gratis)</span>
+          </div>
+          <div class="border-t border-outline-variant pt-3 flex justify-between items-center">
+            <span class="text-title-lg font-title-lg text-on-surface">Total</span>
+            <span class="text-title-lg font-title-lg text-primary font-bold" id="confirm-total">$0</span>
+          </div>
+        </div>
+      </div>
+      <div class="bg-secondary-container/20 p-4 rounded-xl flex gap-3 border border-secondary-container">
+        <span class="material-symbols-outlined text-secondary shrink-0">shield</span>
+        <div class="space-y-1">
+          <p class="text-label-md font-label-md text-on-secondary-container font-bold">Seguridad BICO</p>
+          <p class="text-label-sm font-label-sm text-on-secondary-container">Nunca compartas tu código de retiro con
+            nadie. Los funcionarios de BICO nunca te lo pedirán.</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <button
+          class="w-full h-14 bg-primary-container text-on-primary-container font-bold rounded-xl shadow-lg hover:brightness-105 active:scale-95 transition-all"
+          onclick="goToStep3()">Generar código de retiro</button>
+        <button
+          class="w-full h-14 bg-transparent text-primary font-bold rounded-xl border-2 border-primary hover:bg-primary-fixed/20 transition-all"
+          onclick="backToStep1()">Modificar monto</button>
+      </div>
+    </section>
+    <!-- Step 3: Code Generation & Timer -->
+    <section class="step-hidden space-y-stack-lg" id="step3">
+      <div class="text-center space-y-stack-md py-4">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#5BC500]/10 text-[#225100] rounded-full">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          <span class="text-label-sm font-label-sm">Código generado exitosamente</span>
+        </div>
+        <h2 class="text-title-lg font-title-lg text-on-surface">Usa este código en el cajero</h2>
+      </div>
+      <div
+        class="relative bg-surface-container-lowest p-8 rounded-3xl shadow-[0px_12px_32px_rgba(92,71,56,0.12)] text-center flex flex-col items-center">
+        <div class="mb-6 flex gap-3">
+          <span class="text-[48px] font-bold text-primary tracking-widest" id="otp-display">4 8 2 9 0 3</span>
+        </div>
+        <div class="relative flex items-center justify-center w-24 h-24 mb-4">
+          <svg class="w-full h-full -rotate-90">
+            <circle class="text-surface-container-high" cx="48" cy="48" fill="transparent" r="44" stroke="currentColor"
+              stroke-width="4"></circle>
+            <circle class="text-primary otp-timer-ring" cx="48" cy="48" fill="transparent" id="timer-progress" r="44"
+              stroke="currentColor" stroke-dasharray="276" stroke-dashoffset="0" stroke-linecap="round"
+              stroke-width="4"></circle>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-title-lg font-title-lg font-bold text-on-surface" id="timer-text">30:00</span>
+          </div>
+        </div>
+        <p class="text-label-sm font-label-sm text-on-surface-variant">El código expirará pronto</p>
+        <button
+          class="mt-8 flex items-center gap-2 text-primary font-bold hover:bg-primary-fixed/10 px-4 py-2 rounded-lg transition-all active:scale-95">
+          <span class="material-symbols-outlined">content_copy</span>
+          <span class="text-label-md">Copiar código</span>
+        </button>
+      </div>
+      <div class="space-y-stack-md">
+        <h3 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Instrucciones</h3>
+        <ul class="space-y-4">
+          <li class="flex gap-4">
+            <span
+              class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm shrink-0">1</span>
+            <p class="text-body-md font-body-md">Acércate a un cajero o corresponsal autorizado.</p>
+          </li>
+          <li class="flex gap-4">
+            <span
+              class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm shrink-0">2</span>
+            <p class="text-body-md font-body-md">Selecciona la opción "Retiros sin tarjeta" o "BICO".</p>
+          </li>
+          <li class="flex gap-4">
+            <span
+              class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm shrink-0">3</span>
+            <p class="text-body-md font-body-md">Ingresa tu número de celular y el código de 6 dígitos.</p>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="w-full h-14 bg-surface-container-highest text-on-surface-variant font-bold rounded-xl mt-4 hover:bg-surface-container-high transition-all"
+        onclick="location.reload()">Finalizar</button>
+    </section>
+  </main>
+  <!-- BottomNavBar -->
+  <nav
+    class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors"
+      href="#">
+      <span class="material-symbols-outlined">home</span>
+      <span class="text-label-sm font-label-sm">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors"
+      href="#">
+      <span class="material-symbols-outlined">account_balance_wallet</span>
+      <span class="text-label-sm font-label-sm">Bolsillos</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors"
+      href="#">
+      <span class="material-symbols-outlined">qr_code_scanner</span>
+      <span class="text-label-sm font-label-sm">QR</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 active:scale-90 transition-transform duration-200"
+      href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+      <span class="text-label-sm font-label-sm">Movimientos</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors"
+      href="#">
+      <span class="material-symbols-outlined">person</span>
+      <span class="text-label-sm font-label-sm">Perfil</span>
+    </a>
+  </nav>
+  <script>
+    function setAmount(val) {
+      document.getElementById('amount').value = val;
+    }
+
+    function goToStep2() {
+      const amount = document.getElementById('amount').value;
+      if (!amount || amount <= 0) {
+        alert('Por favor ingresa un monto válido');
+        return;
+      }
+      document.getElementById('confirm-amount').innerText = '$' + Number(amount).toLocaleString('es-CO');
+      document.getElementById('confirm-total').innerText = '$' + Number(amount).toLocaleString('es-CO');
+
+      document.getElementById('step1').classList.add('step-hidden');
+      document.getElementById('step2').classList.remove('step-hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function backToStep1() {
+      document.getElementById('step2').classList.add('step-hidden');
+      document.getElementById('step1').classList.remove('step-hidden');
+    }
+
+    function goToStep3() {
+      document.getElementById('step2').classList.add('step-hidden');
+      document.getElementById('step3').classList.remove('step-hidden');
+      startTimer(1800); // 30 minutes in seconds
+      window.scrollTo(0, 0);
+    }
+
+    function startTimer(duration) {
+      let timer = duration, minutes, seconds;
+      const timerText = document.getElementById('timer-text');
+      const progressCircle = document.getElementById('timer-progress');
+      const totalDash = 276; // Approximation for 2 * PI * 44
+
+      const interval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        timerText.textContent = minutes + ":" + seconds;
+
+        const progress = (timer / duration) * totalDash;
+        progressCircle.style.strokeDashoffset = totalDash - progress;
+
+        if (--timer < 0) {
+          clearInterval(interval);
+          timerText.textContent = "00:00";
+          timerText.classList.add('text-error');
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+
+</html>

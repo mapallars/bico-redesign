@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Meter Plata - BICO</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Meter Plata - BICO</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -88,20 +95,20 @@
                         "title-lg": ["Inter"]
                     },
                     "fontSize": {
-                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
-                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
                     }
                 },
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
@@ -112,121 +119,153 @@
             white-space: nowrap;
             direction: ltr;
         }
+
         .method-card.active {
             border: 2px solid #7d5700;
             background-color: #fff1e9;
         }
+
         .amount-chip.active {
             background-color: #514532;
             color: #ffffff;
         }
+
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen pb-20">
-<!-- TopAppBar -->
-<nav class="sticky top-0 z-50 bg-surface flex justify-between items-center w-full px-container-margin-mobile h-16">
-<div class="flex items-center gap-4">
-<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-150" onclick="window.history.back()">
-<span class="material-symbols-outlined text-primary">arrow_back</span>
-</button>
-<span class="text-title-lg font-title-lg font-bold text-primary">Meter Plata</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">notifications</span>
-</div>
-</nav>
-<main class="max-w-md mx-auto px-container-margin-mobile pt-stack-md">
-<!-- Header Section -->
-<header class="mb-stack-lg">
-<h1 class="text-headline-md font-headline-md mb-stack-sm text-on-surface">¿Cómo quieres recargar?</h1>
-<p class="text-body-md text-on-surface-variant">Selecciona el método que prefieras para ingresar dinero a tu cuenta BICO.</p>
-</header>
-<!-- Method Selection Grid -->
-<div class="grid grid-cols-1 gap-gutter mb-stack-lg">
-<!-- Option 1: Banco Agrario -->
-<button class="method-card flex items-center p-stack-md bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] text-left transition-all active:scale-[0.98] border-2 border-transparent" id="method-agrario" onclick="selectMethod('agrario')">
-<div class="w-14 h-14 bg-tertiary-fixed rounded-full flex items-center justify-center mr-4">
-<span class="material-symbols-outlined text-on-tertiary-fixed text-[32px]">account_balance</span>
-</div>
-<div class="flex-1">
-<p class="font-title-lg text-on-surface">Desde cuenta Banco Agrario</p>
-<p class="text-label-md text-on-surface-variant">Transferencia inmediata sin costo</p>
-</div>
-</button>
-<!-- Option 2: PSE -->
-<button class="method-card flex items-center p-stack-md bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] text-left transition-all active:scale-[0.98] border-2 border-transparent" id="method-pse" onclick="selectMethod('pse')">
-<div class="w-14 h-14 bg-primary-fixed rounded-full flex items-center justify-center mr-4">
-<span class="material-symbols-outlined text-on-primary-fixed text-[32px]">payments</span>
-</div>
-<div class="flex-1">
-<p class="font-title-lg text-on-surface">Desde otro banco (PSE)</p>
-<p class="text-label-md text-on-surface-variant">Usa cualquier entidad financiera</p>
-</div>
-</button>
-<!-- Option 3: Corresponsal -->
-<button class="method-card flex items-center p-stack-md bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] text-left transition-all active:scale-[0.98] border-2 border-transparent" id="method-corresponsal" onclick="selectMethod('corresponsal')">
-<div class="w-14 h-14 bg-secondary-fixed rounded-full flex items-center justify-center mr-4">
-<span class="material-symbols-outlined text-on-secondary-fixed text-[32px]">store</span>
-</div>
-<div class="flex-1">
-<p class="font-title-lg text-on-surface">Corresponsal bancario</p>
-<p class="text-label-md text-on-surface-variant">Efectivo en puntos autorizados</p>
-</div>
-</button>
-</div>
-<!-- PSE Details Flow (Hidden by Default) -->
-<div class="hidden animate-in fade-in slide-in-from-bottom-4 duration-300" id="pse-flow">
-<div class="bg-surface-container p-stack-md rounded-xl mb-stack-lg">
-<label class="block text-label-md text-on-surface mb-2" for="amount">Monto a recargar</label>
-<div class="relative mb-stack-md">
-<span class="absolute left-4 top-1/2 -translate-y-1/2 text-headline-md font-headline-md text-on-surface-variant">$</span>
-<input class="w-full h-16 pl-10 pr-4 bg-surface-container-lowest border-outline/20 rounded-xl text-headline-md font-headline-md focus:ring-2 focus:ring-primary focus:border-transparent outline-none" id="amount" placeholder="0" type="number"/>
-</div>
-<p class="text-label-md text-on-surface-variant mb-3">Sugerencias</p>
-<div class="flex gap-2 mb-2 overflow-x-auto pb-2 no-scrollbar">
-<button class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant" onclick="setAmount(10000, this)">10k</button>
-<button class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant" onclick="setAmount(50000, this)">50k</button>
-<button class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant" onclick="setAmount(100000, this)">100k</button>
-<button class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant" onclick="setAmount(200000, this)">200k</button>
-</div>
-</div>
-</div>
-<!-- Action Button -->
-<div class="fixed bottom-24 left-0 w-full px-container-margin-mobile">
-<button class="w-full h-14 bg-primary-container text-on-primary-container font-title-lg rounded-full shadow-lg transition-all active:scale-95 disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed" disabled="" id="continue-btn">
+    <!-- TopAppBar -->
+    <nav class="sticky top-0 z-50 bg-surface flex justify-between items-center w-full px-container-margin-mobile h-16">
+        <div class="flex items-center gap-4">
+            <button
+                class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-150"
+                onclick="window.history.back()">
+                <span class="material-symbols-outlined text-primary">arrow_back</span>
+            </button>
+            <span class="text-title-lg font-title-lg font-bold text-primary">Meter Plata</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">notifications</span>
+        </div>
+    </nav>
+    <main class="max-w-md mx-auto px-container-margin-mobile pt-stack-md">
+        <!-- Header Section -->
+        <header class="mb-stack-lg">
+            <h1 class="text-headline-md font-headline-md mb-stack-sm text-on-surface">¿Cómo quieres recargar?</h1>
+            <p class="text-body-md text-on-surface-variant">Selecciona el método que prefieras para ingresar dinero a tu
+                cuenta BICO.</p>
+        </header>
+        <!-- Method Selection Grid -->
+        <div class="grid grid-cols-1 gap-gutter mb-stack-lg">
+            <!-- Option 1: Banco Agrario -->
+            <button
+                class="method-card flex items-center p-stack-md bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] text-left transition-all active:scale-[0.98] border-2 border-transparent"
+                id="method-agrario" onclick="selectMethod('agrario')">
+                <div class="w-14 h-14 bg-tertiary-fixed rounded-full flex items-center justify-center mr-4">
+                    <span class="material-symbols-outlined text-on-tertiary-fixed text-[32px]">account_balance</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-title-lg text-on-surface">Desde cuenta Banco Agrario</p>
+                    <p class="text-label-md text-on-surface-variant">Transferencia inmediata sin costo</p>
+                </div>
+            </button>
+            <!-- Option 2: PSE -->
+            <button
+                class="method-card flex items-center p-stack-md bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] text-left transition-all active:scale-[0.98] border-2 border-transparent"
+                id="method-pse" onclick="selectMethod('pse')">
+                <div class="w-14 h-14 bg-primary-fixed rounded-full flex items-center justify-center mr-4">
+                    <span class="material-symbols-outlined text-on-primary-fixed text-[32px]">payments</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-title-lg text-on-surface">Desde otro banco (PSE)</p>
+                    <p class="text-label-md text-on-surface-variant">Usa cualquier entidad financiera</p>
+                </div>
+            </button>
+            <!-- Option 3: Corresponsal -->
+            <button
+                class="method-card flex items-center p-stack-md bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] text-left transition-all active:scale-[0.98] border-2 border-transparent"
+                id="method-corresponsal" onclick="selectMethod('corresponsal')">
+                <div class="w-14 h-14 bg-secondary-fixed rounded-full flex items-center justify-center mr-4">
+                    <span class="material-symbols-outlined text-on-secondary-fixed text-[32px]">store</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-title-lg text-on-surface">Corresponsal bancario</p>
+                    <p class="text-label-md text-on-surface-variant">Efectivo en puntos autorizados</p>
+                </div>
+            </button>
+        </div>
+        <!-- PSE Details Flow (Hidden by Default) -->
+        <div class="hidden animate-in fade-in slide-in-from-bottom-4 duration-300 pb-24" id="pse-flow">
+            <div class="bg-surface-container p-stack-md rounded-xl mb-stack-lg">
+                <label class="block text-label-md text-on-surface mb-2" for="amount">Monto a recargar</label>
+                <div class="relative mb-stack-md">
+                    <span
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-headline-md font-headline-md text-on-surface-variant">$</span>
+                    <input
+                        class="w-full h-16 pl-10 pr-4 bg-surface-container-lowest border-outline/20 rounded-xl text-headline-md font-headline-md focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                        id="amount" placeholder="0" type="number" />
+                </div>
+                <p class="text-label-md text-on-surface-variant mb-3">Sugerencias</p>
+                <div class="flex gap-2 mb-2 overflow-x-auto pb-2 no-scrollbar">
+                    <button
+                        class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant"
+                        onclick="setAmount(10000, this)">10k</button>
+                    <button
+                        class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant"
+                        onclick="setAmount(50000, this)">50k</button>
+                    <button
+                        class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant"
+                        onclick="setAmount(100000, this)">100k</button>
+                    <button
+                        class="amount-chip whitespace-nowrap px-4 py-2 bg-surface-container-highest rounded-full text-label-md font-label-md transition-colors hover:bg-outline-variant"
+                        onclick="setAmount(200000, this)">200k</button>
+                </div>
+            </div>
+        </div>
+        <!-- Action Button -->
+        <div class="fixed bottom-24 left-0 w-full px-container-margin-mobile">
+            <button
+                class="w-full h-14 bg-primary-container text-on-primary-container font-title-lg rounded-full shadow-lg transition-all active:scale-95 disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed"
+                disabled="" id="continue-btn">
                 Continuar recarga
             </button>
-</div>
-</main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
-<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
-<span class="material-symbols-outlined">home</span>
-<span class="text-label-sm font-label-sm">Home</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span class="text-label-sm font-label-sm">Bolsillos</span>
-</div>
-<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-3 py-1">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
-<span class="text-label-sm font-label-sm">QR Pay</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
-<span class="material-symbols-outlined">history</span>
-<span class="text-label-sm font-label-sm">Movimientos</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
-<span class="material-symbols-outlined">person</span>
-<span class="text-label-sm font-label-sm">Profile</span>
-</div>
-</nav>
-<script>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-label-sm font-label-sm">Home</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">account_balance_wallet</span>
+            <span class="text-label-sm font-label-sm">Bolsillos</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-3 py-1">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+            <span class="text-label-sm font-label-sm">QR</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">history</span>
+            <span class="text-label-sm font-label-sm">Movimientos</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-label-sm font-label-sm">Perfil</span>
+        </div>
+    </nav>
+    <script>
         let selectedMethodId = null;
 
         function selectMethod(method) {
@@ -253,13 +292,13 @@
 
         function setAmount(val, btn) {
             document.getElementById('amount').value = val;
-            
+
             // Highlight chip
             document.querySelectorAll('.amount-chip').forEach(chip => {
                 chip.classList.remove('active');
             });
             btn.classList.add('active');
-            
+
             validateForm();
         }
 
@@ -273,7 +312,7 @@
         function validateForm() {
             const btn = document.getElementById('continue-btn');
             const amountInput = document.getElementById('amount');
-            
+
             if (selectedMethodId === 'pse') {
                 if (amountInput.value && parseInt(amountInput.value) > 0) {
                     btn.disabled = false;
@@ -287,4 +326,6 @@
             }
         }
     </script>
-</body></html>
+</body>
+
+</html>

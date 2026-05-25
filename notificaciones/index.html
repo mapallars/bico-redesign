@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .notification-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+        }
+
+        .notification-card:active {
+            transform: scale(0.98);
+        }
+
+        .unread-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #418FE9;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#7d5700",
+                        "surface-container": "#faebe2",
+                        "on-background": "#211a15",
+                        "surface-container-highest": "#eee0d7",
+                        "on-tertiary-container": "#275b00",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#fff1e9",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#d6c4ac",
+                        "on-tertiary-fixed": "#092100",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#e6d7cf",
+                        "secondary-container": "#fcddc8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fff8f5",
+                        "on-primary-container": "#6b4a00",
+                        "outline": "#837560",
+                        "on-secondary-container": "#776050",
+                        "surface-bright": "#fff8f5",
+                        "background": "#fff8f5",
+                        "tertiary-fixed": "#8efd49",
+                        "tertiary": "#2f6c00",
+                        "on-surface-variant": "#514532",
+                        "on-secondary-fixed-variant": "#574334",
+                        "on-error-container": "#93000a",
+                        "secondary": "#705a4a",
+                        "surface-variant": "#eee0d7",
+                        "primary-fixed-dim": "#ffba30",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "secondary-fixed-dim": "#dec1ad",
+                        "primary-fixed": "#ffdeab",
+                        "tertiary-container": "#70db26",
+                        "inverse-primary": "#ffba30",
+                        "on-tertiary-fixed-variant": "#225100",
+                        "primary-container": "#ffb500",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#271900",
+                        "inverse-on-surface": "#fdeee5",
+                        "surface-container-high": "#f4e5dd",
+                        "secondary-fixed": "#fcddc8",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#7d5700",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#73df2b",
+                        "inverse-surface": "#372f29",
+                        "on-surface": "#211a15",
+                        "on-secondary-fixed": "#28180c",
+                        "success-custom": "#5BC500",
+                        "info-custom": "#418FE9",
+                        "alert-custom": "#FFB500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-margin-desktop": "40px",
+                        "container-margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen pb-24">
+    <!-- Top App Bar -->
+    <header
+        class="sticky top-0 z-50 bg-surface flex justify-between items-center w-full px-container-margin-mobile h-16">
+        <div class="flex items-center gap-4">
+            <button aria-label="Volver"
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+                <span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+            </button>
+            <h1 class="text-title-lg font-title-lg font-bold text-primary">Notificaciones</h1>
+        </div>
+        <button
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+        </button>
+    </header>
+    <main class="max-w-[1200px] mx-auto px-container-margin-mobile md:px-container-margin-desktop py-stack-md">
+        <!-- Today's Notifications -->
+        <section class="mb-stack-lg">
+            <div class="flex items-center justify-between mb-stack-md">
+                <h2 class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">Hoy</h2>
+                <button class="text-label-md font-label-md text-info-custom">Marcar todo como leído</button>
+            </div>
+            <div class="space-y-stack-md">
+                <!-- Notification Item 1: Success -->
+                <div
+                    class="notification-card bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-4 flex gap-4 shadow-[0px_4px_20px_rgba(92,71,56,0.06)] relative overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-success-custom"></div>
+                    <div
+                        class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-success-custom/10 text-success-custom">
+                        <span class="material-symbols-outlined" data-icon="payments">payments</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-body-md font-bold text-on-surface">Transferencia recibida</h3>
+                            <span class="text-label-sm font-label-sm text-on-surface-variant">Hace 2 min</span>
+                        </div>
+                        <p class="text-label-md font-label-md text-on-surface-variant mb-2">Has recibido $450.000 de
+                            Pedro Gómez por 'Venta de Cosecha'.</p>
+                        <div class="flex items-center gap-2">
+                            <div class="unread-indicator"></div>
+                            <span class="text-[10px] font-bold text-info-custom uppercase">Nueva</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Notification Item 2: Info -->
+                <div
+                    class="notification-card bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-4 flex gap-4 shadow-[0px_4px_20px_rgba(92,71,56,0.06)]">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-info-custom/10 text-info-custom">
+                        <span class="material-symbols-outlined" data-icon="agriculture">agriculture</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-body-md font-bold text-on-surface">Nuevo beneficio rural</h3>
+                            <span class="text-label-sm font-label-sm text-on-surface-variant">09:45 AM</span>
+                        </div>
+                        <p class="text-label-md font-label-md text-on-surface-variant">Ya está disponible el subsidio
+                            para fertilizantes orgánicos 2024. ¡Postúlate aquí!</p>
+                    </div>
+                </div>
+                <!-- Notification Item 3: Alert -->
+                <div
+                    class="notification-card bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-4 flex gap-4 shadow-[0px_4px_20px_rgba(92,71,56,0.06)] relative overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-alert-custom"></div>
+                    <div
+                        class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-alert-custom/10 text-alert-custom">
+                        <span class="material-symbols-outlined" data-icon="savings">savings</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-body-md font-bold text-on-surface">Recordatorio de ahorro</h3>
+                            <span class="text-label-sm font-label-sm text-on-surface-variant">07:20 AM</span>
+                        </div>
+                        <p class="text-label-md font-label-md text-on-surface-variant mb-2">Te faltan solo $50.000 para
+                            completar tu meta 'Compra de Tractor'.</p>
+                        <div class="flex items-center gap-2">
+                            <div class="unread-indicator"></div>
+                            <span class="text-[10px] font-bold text-info-custom uppercase">Nueva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Yesterday's Notifications -->
+        <section>
+            <div class="flex items-center justify-between mb-stack-md">
+                <h2 class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">Ayer</h2>
+            </div>
+            <div class="space-y-stack-md opacity-80">
+                <!-- Notification Item 4: General -->
+                <div
+                    class="notification-card bg-surface-container-low border border-outline-variant/5 rounded-xl p-4 flex gap-4">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-on-surface-variant/10 text-on-surface-variant">
+                        <span class="material-symbols-outlined" data-icon="security">security</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-body-md font-bold text-on-surface">Inicio de sesión exitoso</h3>
+                            <span class="text-label-sm font-label-sm text-on-surface-variant">Ayer, 04:15 PM</span>
+                        </div>
+                        <p class="text-label-md font-label-md text-on-surface-variant">Se detectó un acceso desde un
+                            dispositivo nuevo (iPhone 15).</p>
+                    </div>
+                </div>
+                <!-- Notification Item 5: Success -->
+                <div
+                    class="notification-card bg-surface-container-low border border-outline-variant/5 rounded-xl p-4 flex gap-4">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-success-custom/10 text-success-custom">
+                        <span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-body-md font-bold text-on-surface">Pago de servicios</h3>
+                            <span class="text-label-sm font-label-sm text-on-surface-variant">Ayer, 10:00 AM</span>
+                        </div>
+                        <p class="text-label-md font-label-md text-on-surface-variant">Tu factura de energía rural por
+                            $85.200 ha sido pagada correctamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Graphic Callout / Bento-like Element -->
+        <section class="mt-stack-lg">
+            <div
+                class="relative overflow-hidden rounded-2xl bg-primary text-on-primary p-6 shadow-lg min-h-[160px] flex flex-col justify-end">
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl">
+                </div>
+                <div class="relative z-10">
+                    <h4 class="text-headline-md font-headline-md mb-1">Consejo BICO</h4>
+                    <p class="text-body-md opacity-90">Activa el modo 'Ahorro Automático' y alcanza tus metas rurales un
+                        20% más rápido.</p>
+                    <button
+                        class="mt-4 px-6 py-2 bg-primary-container text-on-primary-container rounded-full font-bold text-label-md hover:scale-105 transition-transform">Configurar
+                        ahora</button>
+                </div>
+                <img alt="Granja moderna"
+                    class="absolute top-0 left-0 w-full h-full object-cover mix-blend-overlay opacity-30"
+                    data-alt="A lush green Colombian coffee plantation at sunrise with soft golden light hitting the dew-covered leaves. The image is captured in a professional high-fidelity photography style, evoking a sense of growth, prosperity, and peace. Warm earthy tones and vibrant greens dominate the composition, perfectly aligning with the BICO brand identity of modern rural banking."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy9SOD5VQD0ZH8k9JYu9vgFGjMyQQHTnT3u9PRopfvp1GSPytYz7bszRK9nCwkhWe4nrF7saSYSe3hBI4vM5Ublg01uXyjVTxdrbuWU-pHzDAJuTyeSkqkRF3DPCTLnhBBzNa-a-mLwoMOpbYMs5lsXIgQDI_DJquis0oYQsxdhip_FDMNO72UTi_l4iGRwh5MNB8CIwECJ0qfEO5x0X2th3mc_QC8AyBfAzzijhkEhomgWnKzuh9Ka818SlDjkLJRHTfgVd-0CaDg" />
+            </div>
+        </section>
+    </main>
+    <script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.notification-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Settle visual feedback of marking as read
+                const indicator = card.querySelector('.unread-indicator');
+                const newLabel = card.querySelector('.text-info-custom');
+                if (indicator) {
+                    indicator.classList.add('opacity-0');
+                    setTimeout(() => indicator.remove(), 300);
+                }
+                if (newLabel) {
+                    newLabel.classList.add('opacity-0');
+                    setTimeout(() => newLabel.remove(), 300);
+                }
+                card.style.opacity = '0.8';
+            });
+        });
+    </script>
+</body>
+
+</html>

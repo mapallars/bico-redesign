@@ -1,198 +1,238 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BICO - Login</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind Configuration -->
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-primary": "#ffffff",
-                    "on-surface-variant": "#514532",
-                    "on-primary-fixed": "#271900",
-                    "primary-container": "#ffb500",
-                    "surface-tint": "#7d5700",
-                    "on-tertiary-fixed-variant": "#225100",
-                    "surface-container-high": "#f4e5dd",
-                    "surface-container-highest": "#eee0d7",
-                    "surface-bright": "#fff8f5",
-                    "tertiary-container": "#70db26",
-                    "on-secondary": "#ffffff",
-                    "on-secondary-fixed": "#28180c",
-                    "on-tertiary-container": "#275b00",
-                    "outline-variant": "#d6c4ac",
-                    "secondary-fixed": "#fcddc8",
-                    "on-secondary-container": "#776050",
-                    "secondary-container": "#fcddc8",
-                    "tertiary-fixed": "#8efd49",
-                    "error-container": "#ffdad6",
-                    "inverse-surface": "#372f29",
-                    "tertiary": "#2f6c00",
-                    "on-surface": "#211a15",
-                    "outline": "#837560",
-                    "secondary": "#705a4a",
-                    "inverse-primary": "#ffba30",
-                    "surface-container": "#faebe2",
-                    "on-secondary-fixed-variant": "#574334",
-                    "surface-container-low": "#fff1e9",
-                    "surface": "#fff8f5",
-                    "primary": "#7d5700",
-                    "on-tertiary": "#ffffff",
-                    "on-primary-container": "#6b4a00",
-                    "surface-container-lowest": "#ffffff",
-                    "secondary-fixed-dim": "#dec1ad",
-                    "primary-fixed-dim": "#ffba30",
-                    "on-error": "#ffffff",
-                    "on-primary-fixed-variant": "#5f4100",
-                    "tertiary-fixed-dim": "#73df2b",
-                    "background": "#fff8f5",
-                    "surface-dim": "#e6d7cf",
-                    "on-background": "#211a15",
-                    "surface-variant": "#eee0d7",
-                    "primary-fixed": "#ffdeab",
-                    "on-tertiary-fixed": "#092100",
-                    "inverse-on-surface": "#fdeee5",
-                    "on-error-container": "#93000a",
-                    "error": "#ba1a1a"
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BICO - Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#514532",
+                        "on-primary-fixed": "#271900",
+                        "primary-container": "#ffb500",
+                        "surface-tint": "#7d5700",
+                        "on-tertiary-fixed-variant": "#225100",
+                        "surface-container-high": "#f4e5dd",
+                        "surface-container-highest": "#eee0d7",
+                        "surface-bright": "#fff8f5",
+                        "tertiary-container": "#70db26",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#28180c",
+                        "on-tertiary-container": "#275b00",
+                        "outline-variant": "#d6c4ac",
+                        "secondary-fixed": "#fcddc8",
+                        "on-secondary-container": "#776050",
+                        "secondary-container": "#fcddc8",
+                        "tertiary-fixed": "#8efd49",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#372f29",
+                        "tertiary": "#2f6c00",
+                        "on-surface": "#211a15",
+                        "outline": "#837560",
+                        "secondary": "#705a4a",
+                        "inverse-primary": "#ffba30",
+                        "surface-container": "#faebe2",
+                        "on-secondary-fixed-variant": "#574334",
+                        "surface-container-low": "#fff1e9",
+                        "surface": "#fff8f5",
+                        "primary": "#7d5700",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#6b4a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#dec1ad",
+                        "primary-fixed-dim": "#ffba30",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "tertiary-fixed-dim": "#73df2b",
+                        "background": "#fff8f5",
+                        "surface-dim": "#e6d7cf",
+                        "on-background": "#211a15",
+                        "surface-variant": "#eee0d7",
+                        "primary-fixed": "#ffdeab",
+                        "on-tertiary-fixed": "#092100",
+                        "inverse-on-surface": "#fdeee5",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin-desktop": "40px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "container-margin-mobile": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "container-margin-desktop": "40px",
-                    "stack-md": "16px",
-                    "unit": "8px",
-                    "gutter": "16px",
-                    "stack-lg": "32px",
-                    "container-margin-mobile": "16px",
-                    "stack-sm": "8px"
-            },
-            "fontFamily": {
-                    "label-sm": ["Inter"],
-                    "display-lg-mobile": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "display-lg": ["Inter"],
-                    "body-md": ["Inter"],
-                    "label-md": ["Inter"],
-                    "title-lg": ["Inter"]
-            },
-            "fontSize": {
-                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
-                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
-            }
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .biometric-ripple {
             animation: ripple 2s infinite;
         }
+
         @keyframes ripple {
-            0% { transform: scale(1); opacity: 0.4; }
-            100% { transform: scale(1.5); opacity: 0; }
+            0% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center p-container-margin-mobile md:p-container-margin-desktop">
-<!-- Content Canvas -->
-<main class="w-full max-w-[440px] flex flex-col gap-stack-lg">
-<!-- Header Section -->
-<header class="flex flex-col items-center text-center gap-stack-sm mb-stack-md">
-<div class="w-20 h-20 bg-primary-container rounded-full flex items-center justify-center mb-stack-sm shadow-sm overflow-hidden">
-<img alt="BICO Logo" class="w-12 h-12" data-alt="A sophisticated corporate logo mark featuring abstract geometric shapes representing growth and stability. The colors are dominated by warm golden yellows and deep earthy browns, set against a clean white background. The aesthetic is modern, minimalist, and conveys a sense of agricultural financial security and premium digital banking services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBApoT5Mf2N8xqaH4TBytv6N90ydvQLpwBlQkUTNKEreW-yil7pFooElB5vKMwna4mzpxaxvXzq087lmJVziUsx0OvD4SeC0XneEVusFzs3NHjWIIolMe6HizNRfpIti3HI7_Cm9lqf96CpDZMO29POtIWlKpZ5wNpa3awXfQuh3fDSsXrQvOzRJT-Vwhpe4wKoRsUn5lt-fZSq0fPCsQkKH1-8KdJXktqHYL512VkTbtz7mfVcfQ0Fny3wjv8bsqBWx6TdDSuvra4"/>
-</div>
-<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-primary">BICO</h1>
-<p class="text-headline-md font-headline-md text-on-surface-variant">Bienvenido de nuevo</p>
-</header>
-<!-- Login Card -->
-<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-outline-variant/10">
-<form class="flex flex-col gap-stack-md" id="loginForm">
-<!-- ID Field -->
-<div class="flex flex-col gap-stack-sm">
-<label class="text-label-md font-label-md text-on-surface" for="id_number">Cédula de Identidad</label>
-<div class="relative group">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">person</span>
-<input class="w-full h-[56px] pl-12 pr-4 bg-surface rounded-lg border border-outline/20 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all text-body-md font-body-md" id="id_number" placeholder="Ingresa tu número" type="text"/>
-</div>
-</div>
-<!-- PIN Field -->
-<div class="flex flex-col gap-stack-sm">
-<div class="flex justify-between items-center">
-<label class="text-label-md font-label-md text-on-surface" for="pin">PIN de seguridad</label>
-<button class="text-label-sm font-label-sm text-tertiary hover:underline" type="button">Olvidé mi PIN</button>
-</div>
-<div class="relative group">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
-<input class="w-full h-[56px] pl-12 pr-12 bg-surface rounded-lg border border-outline/20 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all text-body-md font-body-md tracking-[0.5em]" id="pin" maxlength="4" placeholder="••••" type="password"/>
-<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface-variant" type="button">
-<span class="material-symbols-outlined">visibility</span>
-</button>
-</div>
-</div>
-<!-- Primary Action -->
-<button class="mt-stack-md w-full h-[56px] bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-bold text-title-lg rounded-xl transition-all active:scale-95 shadow-sm flex items-center justify-center gap-stack-sm" type="submit">
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center p-container-margin-mobile md:p-container-margin-desktop">
+    <!-- Content Canvas -->
+    <main class="w-full max-w-[440px] flex flex-col gap-stack-lg">
+        <!-- Header Section -->
+        <header class="flex flex-col items-center text-center gap-stack-sm mb-stack-md">
+            <div class="w-20 h-20">
+            </div>
+            <img class="h-10" src="../public/logotype.png" alt="" />
+            <p class="text-headline-md font-headline-md text-on-surface-variant">Bienvenido de nuevo</p>
+        </header>
+        <!-- Login Card -->
+        <div
+            class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-outline-variant/10">
+            <form class="flex flex-col gap-stack-md" id="loginForm">
+                <!-- ID Field -->
+                <div class="flex flex-col gap-stack-sm">
+                    <label class="text-label-md font-label-md text-on-surface" for="id_number">Cédula de
+                        Identidad</label>
+                    <div class="relative group">
+                        <span
+                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">person</span>
+                        <input
+                            class="w-full h-[56px] pl-12 pr-4 bg-surface rounded-lg border border-outline/20 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all text-body-md font-body-md"
+                            id="id_number" placeholder="Ingresa tu número" type="text" />
+                    </div>
+                </div>
+                <!-- PIN Field -->
+                <div class="flex flex-col gap-stack-sm">
+                    <div class="flex justify-between items-center">
+                        <label class="text-label-md font-label-md text-on-surface" for="pin">PIN de seguridad</label>
+                        <button class="text-label-sm font-label-sm text-tertiary hover:underline" type="button">Olvidé
+                            mi PIN</button>
+                    </div>
+                    <div class="relative group">
+                        <span
+                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">lock</span>
+                        <input
+                            class="w-full h-[56px] pl-12 pr-12 bg-surface rounded-lg border border-outline/20 focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all text-body-md font-body-md tracking-[0.5em]"
+                            id="pin" maxlength="4" placeholder="••••" type="password" />
+                        <button
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface-variant"
+                            type="button">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Primary Action -->
+                <button
+                    class="mt-stack-md w-full h-[56px] bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-bold text-title-lg rounded-xl transition-all active:scale-95 shadow-sm flex items-center justify-center gap-stack-sm"
+                    type="submit">
                     Entrar
                     <span class="material-symbols-outlined">chevron_right</span>
-</button>
-</form>
-<!-- Biometric Option -->
-<div class="mt-stack-lg pt-stack-lg border-t border-outline-variant/20 flex flex-col items-center gap-stack-sm">
-<p class="text-label-sm font-label-sm text-outline">O ingresa con biometría</p>
-<div class="relative">
-<div class="biometric-ripple absolute inset-0 bg-primary/10 rounded-full"></div>
-<button class="relative z-10 w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-90 duration-150 shadow-sm border border-outline-variant/10" id="biometricBtn">
-<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 0;">fingerprint</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Secondary Footer Actions -->
-<footer class="flex flex-col items-center gap-stack-md mt-stack-md">
-<button class="text-label-md font-label-md text-secondary hover:text-on-secondary-container transition-colors">
+                </button>
+            </form>
+            <!-- Biometric Option -->
+            <div
+                class="mt-stack-lg pt-stack-lg border-t border-outline-variant/20 flex flex-col items-center gap-stack-sm">
+                <p class="text-label-sm font-label-sm text-outline">O ingresa con biometría</p>
+                <div class="relative">
+                    <div class="biometric-ripple absolute inset-0 bg-primary/10 rounded-full"></div>
+                    <button
+                        class="relative z-10 w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-90 duration-150 shadow-sm border border-outline-variant/10"
+                        id="biometricBtn">
+                        <span class="material-symbols-outlined text-[32px]"
+                            style="font-variation-settings: 'FILL' 0;">fingerprint</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Secondary Footer Actions -->
+        <footer class="flex flex-col items-center gap-stack-md mt-stack-md">
+            <button
+                class="text-label-md font-label-md text-secondary hover:text-on-secondary-container transition-colors">
                 ¿Aún no tienes cuenta? <span class="text-primary font-bold">Regístrate</span>
-</button>
-<div class="flex gap-stack-md">
-<a class="text-label-sm font-label-sm text-outline hover:text-on-surface-variant" href="#">Seguridad</a>
-<span class="text-outline/30">•</span>
-<a class="text-label-sm font-label-sm text-outline hover:text-on-surface-variant" href="#">Soporte</a>
-<span class="text-outline/30">•</span>
-<a class="text-label-sm font-label-sm text-outline hover:text-on-surface-variant" href="#">Legales</a>
-</div>
-</footer>
-</main>
-<!-- Error/Feedback Toast (Hidden by default) -->
-<div class="fixed bottom-10 left-1/2 -translate-x-1/2 px-stack-md py-stack-sm bg-error-container text-on-error-container rounded-lg shadow-lg flex items-center gap-2 opacity-0 translate-y-4 pointer-events-none transition-all duration-300" id="toast">
-<span class="material-symbols-outlined">error</span>
-<span class="text-label-md font-label-md" id="toastMessage"></span>
-</div>
-<script>
+            </button>
+            <div class="flex gap-stack-md">
+                <a class="text-label-sm font-label-sm text-outline hover:text-on-surface-variant" href="#">Seguridad</a>
+                <span class="text-outline/30">•</span>
+                <a class="text-label-sm font-label-sm text-outline hover:text-on-surface-variant" href="#">Soporte</a>
+                <span class="text-outline/30">•</span>
+                <a class="text-label-sm font-label-sm text-outline hover:text-on-surface-variant" href="#">Legales</a>
+            </div>
+        </footer>
+    </main>
+    <!-- Error/Feedback Toast (Hidden by default) -->
+    <div class="fixed bottom-10 left-1/2 -translate-x-1/2 px-stack-md py-stack-sm bg-error-container text-on-error-container rounded-lg shadow-lg flex items-center gap-2 opacity-0 translate-y-4 pointer-events-none transition-all duration-300"
+        id="toast">
+        <span class="material-symbols-outlined">error</span>
+        <span class="text-label-md font-label-md" id="toastMessage"></span>
+    </div>
+    <script>
         const loginForm = document.getElementById('loginForm');
         const idInput = document.getElementById('id_number');
         const pinInput = document.getElementById('pin');
@@ -204,7 +244,7 @@
             toastMessage.textContent = message;
             toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
             toast.classList.add('opacity-100', 'translate-y-0');
-            
+
             setTimeout(() => {
                 toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
                 toast.classList.remove('opacity-100', 'translate-y-0');
@@ -221,12 +261,12 @@
                 showToast('El PIN debe ser de 4 dígitos.');
                 return;
             }
-            
+
             // Simulating success
             const btn = e.target.querySelector('button[type="submit"]');
             btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span>';
             setTimeout(() => {
-                alert('Iniciando sesión...');
+                window.location.href = "../home";
                 btn.innerHTML = 'Entrar <span class="material-symbols-outlined">chevron_right</span>';
             }, 1000);
         });
@@ -244,4 +284,6 @@
             e.target.value = e.target.value.replace(/[^0-9]/g, '');
         });
     </script>
-</body></html>
+</body>
+
+</html>

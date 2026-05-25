@@ -1,5 +1,5 @@
 ---
-name: AgroDigital Core
+name: Banco Agrariol Core
 colors:
   surface: '#fff8f5'
   surface-dim: '#e6d7cf'

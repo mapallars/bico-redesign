@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -87,197 +94,230 @@
                         "title-lg": ["Inter"]
                     },
                     "fontSize": {
-                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
-                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
                     }
                 },
             },
         }
     </script>
-<style>
-        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
             vertical-align: middle;
         }
-        .balance-blur { filter: blur(8px); }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .balance-blur {
+            filter: blur(8px);
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
 <body class="bg-background text-on-background min-h-screen pb-24">
-<!-- TopAppBar -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-surface dark:bg-surface-dim flex justify-between items-center w-full px-container-margin-mobile h-16">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary-container">
-<img alt="Profile" class="w-full h-full object-cover" data-alt="A close-up professional portrait of a smiling farmer in his 40s wearing a clean denim shirt. The background shows a soft-focus sun-drenched rural landscape with warm golden hour lighting. The image maintains a high-key modern minimalist aesthetic, emphasizing clarity and approachability in line with the brand's human security theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2GKUBHKkhTgnrMKGgRaZNTb37eyjzI5XwpkFV-79HMA01uXfPpTBBSjXmQoT_Bu1sBf-_uXNRAWxZdCIhvOWd_V3uYBlg0EwSnrakAiS6eq1Ro4XT31OGd3NnVoerftM7ou3yOv0uzZEdwfhkuMzyYDm4SAa_C-zZZChpuIdxH0sxT5gdj1cPGLE49oFzmyttOkC74Frj3p4sVRdVjnJR3uw_wh2Y_KLuLDahKOZGxT8U3ooQbnD2ntpf0FSsYdCD7LhykKaKPY"/>
-</div>
-<span class="text-title-lg font-title-lg font-bold text-primary dark:text-primary-fixed-dim">BICO</span>
-</div>
-<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-150">
-<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="notifications">notifications</span>
-</button>
-</header>
-<main class="pt-20 px-container-margin-mobile max-w-2xl mx-auto space-y-6">
-<!-- Hero Section: Saldo Available -->
-<section class="bg-white rounded-[24px] p-6 shadow-[0px_4px_20px_rgba(92,71,56,0.06)] relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-4">
-<button class="text-secondary opacity-60 hover:opacity-100 transition-opacity" onclick="toggleBalance()">
-<span class="material-symbols-outlined" data-icon="visibility" id="balance-icon">visibility</span>
-</button>
-</div>
-<div class="space-y-1">
-<p class="text-label-md font-label-md text-on-secondary-container">Saldo disponible</p>
-<div class="flex items-baseline gap-1">
-<span class="text-title-lg font-title-lg text-secondary">$</span>
-<h1 class="text-[40px] font-bold tracking-tight text-on-surface transition-all duration-300" id="balance-amount">2.450.000</h1>
-</div>
-</div>
-<div class="mt-4 flex items-center gap-2 text-tertiary font-medium text-label-md">
-<span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
-<span>+12% este mes</span>
-</div>
-<!-- Decorative Abstract Pattern -->
-<div class="absolute -bottom-12 -right-12 w-32 h-32 bg-primary-container/10 rounded-full blur-3xl"></div>
-</section>
-<!-- Quick Action Grid -->
-<section class="grid grid-cols-4 gap-3">
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-full aspect-square bg-primary-container rounded-2xl flex items-center justify-center text-on-primary-container shadow-sm group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-[28px]" data-icon="add_circle">add_circle</span>
-</div>
-<span class="text-label-sm font-label-sm text-center">Meter plata</span>
-</button>
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-full aspect-square bg-white border border-outline-variant rounded-2xl flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-[28px]" data-icon="payments">payments</span>
-</div>
-<span class="text-label-sm font-label-sm text-center">Sacar plata</span>
-</button>
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-full aspect-square bg-white border border-outline-variant rounded-2xl flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-[28px]" data-icon="send">send</span>
-</div>
-<span class="text-label-sm font-label-sm text-center">Enviar</span>
-</button>
-<button class="flex flex-col items-center gap-2 group">
-<div class="w-full aspect-square bg-primary-container rounded-2xl flex items-center justify-center text-on-primary-container shadow-sm group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-[28px]" data-icon="qr_code_scanner">qr_code_scanner</span>
-</div>
-<span class="text-label-sm font-label-sm text-center">Pagar QR</span>
-</button>
-</section>
-<!-- Mis Bolsillos Preview -->
-<section class="space-y-4">
-<div class="flex justify-between items-center">
-<h2 class="text-title-lg font-title-lg text-on-surface">Mis Bolsillos</h2>
-<button class="text-primary font-bold text-label-md">Ver todos</button>
-</div>
-<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4">
-<!-- Pocket Card 1 -->
-<div class="flex-shrink-0 w-[140px] bg-white p-4 rounded-2xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-surface-container">
-<div class="w-10 h-10 bg-tertiary/10 rounded-full flex items-center justify-center mb-3">
-<span class="material-symbols-outlined text-tertiary" data-icon="agriculture">agriculture</span>
-</div>
-<p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Insumos</p>
-<p class="text-body-md font-bold text-on-surface">$850.000</p>
-</div>
-<!-- Pocket Card 2 -->
-<div class="flex-shrink-0 w-[140px] bg-white p-4 rounded-2xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-surface-container">
-<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-<span class="material-symbols-outlined text-primary" data-icon="house">house</span>
-</div>
-<p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Hogar</p>
-<p class="text-body-md font-bold text-on-surface">$200.000</p>
-</div>
-<!-- Add Pocket -->
-<button class="flex-shrink-0 w-[140px] bg-surface-container-low border-2 border-dashed border-outline-variant rounded-2xl flex flex-col items-center justify-center text-outline gap-2">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-<span class="text-label-sm font-label-sm">Crear nuevo</span>
-</button>
-</div>
-</section>
-<!-- Movimientos Recientes -->
-<section class="space-y-4">
-<div class="flex justify-between items-center">
-<h2 class="text-title-lg font-title-lg text-on-surface">Movimientos</h2>
-<button class="text-primary font-bold text-label-md">Ver todos</button>
-</div>
-<div class="bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-surface-container">
-<!-- Transaction 1 -->
-<div class="flex items-center gap-4 p-4 hover:bg-surface-container-low transition-colors">
-<div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center text-tertiary">
-<span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
-</div>
-<div class="flex-1">
-<p class="text-body-md font-semibold text-on-surface">Venta Cosecha</p>
-<p class="text-label-sm font-label-sm text-on-surface-variant">Hoy, 10:45 AM</p>
-</div>
-<p class="text-body-md font-bold text-tertiary">+$1.200.000</p>
-</div>
-<div class="mx-4 h-px bg-outline-variant/10"></div>
-<!-- Transaction 2 -->
-<div class="flex items-center gap-4 p-4 hover:bg-surface-container-low transition-colors">
-<div class="w-12 h-12 bg-error/10 rounded-full flex items-center justify-center text-error">
-<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-</div>
-<div class="flex-1">
-<p class="text-body-md font-semibold text-on-surface">AgroPunto S.A.</p>
-<p class="text-label-sm font-label-sm text-on-surface-variant">Ayer, 4:20 PM</p>
-</div>
-<p class="text-body-md font-bold text-on-surface">-$450.000</p>
-</div>
-<div class="mx-4 h-px bg-outline-variant/10"></div>
-<!-- Transaction 3 -->
-<div class="flex items-center gap-4 p-4 hover:bg-surface-container-low transition-colors">
-<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-</div>
-<div class="flex-1">
-<p class="text-body-md font-semibold text-on-surface">Transferencia a Juan</p>
-<p class="text-label-sm font-label-sm text-on-surface-variant">15 Oct, 9:00 AM</p>
-</div>
-<p class="text-body-md font-bold text-on-surface">-$15.000</p>
-</div>
-</div>
-</section>
-</main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface dark:bg-surface-dim shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
-<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-2xl px-3 py-1 scale-90 transition-transform duration-200">
-<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="text-label-sm font-label-sm">Home</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
-<span class="text-label-sm font-label-sm">Bolsillos</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
-<span class="text-label-sm font-label-sm">QR Pay</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined" data-icon="history">history</span>
-<span class="text-label-sm font-label-sm">Movimientos</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="text-label-sm font-label-sm">Profile</span>
-</button>
-</nav>
-<script>
+    <!-- TopAppBar -->
+    <header class="bg-surface dark:bg-surface-dim sticky top-0 z-50 flex justify-between items-center w-full px-4 h-16">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary">
+                <img alt="Perfil" class="w-full h-full object-cover"
+                    data-alt="A professional close-up portrait of a friendly Hispanic man in his late 30s with a warm smile, set against a soft, sun-drenched rural Colombian landscape. The lighting is natural and high-key, emphasizing a light-mode aesthetic. The color palette features earthy tones, soft browns, and golden hues that reflect a secure and grounded financial institution."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgRhkFxuEGX1Dc0qL-Kb4F-jHPLeY-2o1oLd3EQRbiXmzCQRqrQrbkTEgNjmlakXZBHSkkx08WLq-xXeNZ0TTdkVjhTZ3BOjc-IXZ1zyxY_s4QC-Wk0X4aZg-mhF-OObRMjCLIWJjUss9Aa72kL4R0zslaA7Rrn1igRp5TatEoyFWAgpafGDjjIsiWSu8WYwEsPhbdjfPZ8QDYzPKML0mYpBF35whvhxy4TWoCB_O3vAilpx8Y8AXR83xnzbTgkxFhGm1ZYEh91MzS" />
+            </div>
+            <img class="h-[25px]" src="../public/logotype.png" alt="BICO" />
+        </div>
+        <button
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+            <span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+        </button>
+    </header>
+    <main class="pt-20 px-container-margin-mobile max-w-2xl mx-auto space-y-6">
+        <!-- Hero Section: Saldo Available -->
+        <h1 class="text-title-lg font-title-lg text-primary dark:text-primary-fixed-dim">¡Hola, David!</h1>
+        <section
+            class="bg-white rounded-[24px] p-6 shadow-[0px_4px_20px_rgba(92,71,56,0.06)] relative overflow-hidden group">
+            <div class="absolute top-0 right-0 p-4">
+                <button class="text-secondary opacity-60 hover:opacity-100 transition-opacity"
+                    onclick="toggleBalance()">
+                    <span class="material-symbols-outlined" data-icon="visibility" id="balance-icon">visibility</span>
+                </button>
+            </div>
+            <div class="space-y-1">
+                <p class="text-label-md font-label-md text-on-secondary-container">Saldo disponible</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-title-lg font-title-lg text-secondary">$</span>
+                    <h1 class="text-[40px] font-bold tracking-tight text-on-surface transition-all duration-300"
+                        id="balance-amount">2.450.000</h1>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center gap-2 text-tertiary font-medium text-label-md">
+                <span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
+                <span>+12% este mes</span>
+            </div>
+            <!-- Decorative Abstract Pattern -->
+            <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-primary-container/10 rounded-full blur-3xl"></div>
+        </section>
+        <!-- Quick Action Grid -->
+        <section class="grid grid-cols-4 gap-3">
+            <button class="flex flex-col items-center gap-2 group">
+                <div
+                    class="w-full aspect-square bg-primary-container rounded-2xl flex items-center justify-center text-on-primary-container shadow-sm group-active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined text-[28px]" data-icon="add_circle">add_circle</span>
+                </div>
+                <span class="text-label-sm font-label-sm text-center">Meter plata</span>
+            </button>
+            <button class="flex flex-col items-center gap-2 group">
+                <div
+                    class="w-full aspect-square bg-primary-container rounded-2xl flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined text-[28px]" data-icon="payments">payments</span>
+                </div>
+                <span class="text-label-sm font-label-sm text-center">Sacar plata</span>
+            </button>
+            <button class="flex flex-col items-center gap-2 group">
+                <div
+                    class="w-full aspect-square bg-white border border-outline-variant rounded-2xl flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined text-[28px]" data-icon="send">send</span>
+                </div>
+                <span class="text-label-sm font-label-sm text-center">Enviar</span>
+            </button>
+            <button class="flex flex-col items-center gap-2 group">
+                <div
+                    class="w-full aspect-square bg-primary-container rounded-2xl flex items-center justify-center text-on-primary-container shadow-sm group-active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined text-[28px]"
+                        data-icon="qr_code_scanner">qr_code_scanner</span>
+                </div>
+                <span class="text-label-sm font-label-sm text-center">Pagar QR</span>
+            </button>
+        </section>
+        <!-- Mis Bolsillos Preview -->
+        <section class="space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-title-lg font-title-lg text-on-surface">Mis Bolsillos</h2>
+                <button class="text-primary font-bold text-label-md">Ver todos</button>
+            </div>
+            <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4">
+                <!-- Pocket Card 1 -->
+                <div
+                    class="flex-shrink-0 w-[140px] bg-white p-4 rounded-2xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-surface-container">
+                    <div class="w-10 h-10 bg-tertiary/10 rounded-full flex items-center justify-center mb-3">
+                        <span class="material-symbols-outlined text-tertiary" data-icon="agriculture">agriculture</span>
+                    </div>
+                    <p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Insumos</p>
+                    <p class="text-body-md font-bold text-on-surface">$850.000</p>
+                </div>
+                <!-- Pocket Card 2 -->
+                <div
+                    class="flex-shrink-0 w-[140px] bg-white p-4 rounded-2xl shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-surface-container">
+                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                        <span class="material-symbols-outlined text-primary" data-icon="house">house</span>
+                    </div>
+                    <p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Hogar</p>
+                    <p class="text-body-md font-bold text-on-surface">$200.000</p>
+                </div>
+                <!-- Add Pocket -->
+                <button
+                    class="flex-shrink-0 w-[140px] bg-surface-container-low border-2 border-dashed border-outline-variant rounded-2xl flex flex-col items-center justify-center text-outline gap-2">
+                    <span class="material-symbols-outlined" data-icon="add">add</span>
+                    <span class="text-label-sm font-label-sm">Crear nuevo</span>
+                </button>
+            </div>
+        </section>
+        <!-- Movimientos Recientes -->
+        <section class="space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-title-lg font-title-lg text-on-surface">Movimientos</h2>
+                <button class="text-primary font-bold text-label-md">Ver todos</button>
+            </div>
+            <div
+                class="bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(92,71,56,0.06)] border border-surface-container">
+                <!-- Transaction 1 -->
+                <div class="flex items-center gap-4 p-4 hover:bg-surface-container-low transition-colors">
+                    <div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center text-tertiary">
+                        <span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-body-md font-semibold text-on-surface">Venta Cosecha</p>
+                        <p class="text-label-sm font-label-sm text-on-surface-variant">Hoy, 10:45 AM</p>
+                    </div>
+                    <p class="text-body-md font-bold text-tertiary">+$1.200.000</p>
+                </div>
+                <div class="mx-4 h-px bg-outline-variant/10"></div>
+                <!-- Transaction 2 -->
+                <div class="flex items-center gap-4 p-4 hover:bg-surface-container-low transition-colors">
+                    <div class="w-12 h-12 bg-error/10 rounded-full flex items-center justify-center text-error">
+                        <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-body-md font-semibold text-on-surface">AgroPunto S.A.</p>
+                        <p class="text-label-sm font-label-sm text-on-surface-variant">Ayer, 4:20 PM</p>
+                    </div>
+                    <p class="text-body-md font-bold text-on-surface">-$450.000</p>
+                </div>
+                <div class="mx-4 h-px bg-outline-variant/10"></div>
+                <!-- Transaction 3 -->
+                <div class="flex items-center gap-4 p-4 hover:bg-surface-container-low transition-colors">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
+                        <span class="material-symbols-outlined" data-icon="person">person</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-body-md font-semibold text-on-surface">Transferencia a Juan</p>
+                        <p class="text-label-sm font-label-sm text-on-surface-variant">15 Oct, 9:00 AM</p>
+                    </div>
+                    <p class="text-body-md font-bold text-on-surface">-$15.000</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface dark:bg-surface-dim shadow-[0px_-4px_20px_rgba(92,71,56,0.06)] rounded-t-xl">
+        <button
+            class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-2xl px-3 py-1 scale-90 transition-transform duration-200">
+            <span class="material-symbols-outlined" data-icon="home"
+                style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="text-label-sm font-label-sm">Home</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
+            <span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+            <span class="text-label-sm font-label-sm">Bolsillos</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
+            <span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+            <span class="text-label-sm font-label-sm">QR</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
+            <span class="material-symbols-outlined" data-icon="history">history</span>
+            <span class="text-label-sm font-label-sm">Movimientos</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="text-label-sm font-label-sm">Perfil</span>
+        </button>
+    </nav>
+    <script>
         let isBalanceHidden = false;
         const balanceAmount = document.getElementById('balance-amount');
         const balanceIcon = document.getElementById('balance-icon');
@@ -302,4 +342,6 @@
             });
         });
     </script>
-</body></html>
+</body>
+
+</html>
