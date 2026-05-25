@@ -266,7 +266,7 @@
             const btn = e.target.querySelector('button[type="submit"]');
             btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span>';
             setTimeout(() => {
-                window.location.href = "../home";
+                window.location.href = "../home/index.html";
                 btn.innerHTML = 'Entrar <span class="material-symbols-outlined">chevron_right</span>';
             }, 1000);
         });
@@ -284,6 +284,7 @@
             e.target.value = e.target.value.replace(/[^0-9]/g, '');
         });
     </script>
+    <script src="../core/js/navigation.js"></script>
 </body>
 
 </html>

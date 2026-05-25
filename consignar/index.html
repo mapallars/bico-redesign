@@ -325,7 +325,17 @@
                 btn.disabled = true;
             }
         }
+        
+        document.getElementById('continue-btn').addEventListener('click', (e) => {
+            const btn = e.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Procesando...';
+            setTimeout(() => {
+                window.location.href = '../home/index.html';
+            }, 1000);
+        });
     </script>
+    <script src="../core/js/navigation.js"></script>
 </body>
 
 </html>
