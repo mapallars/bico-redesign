@@ -1,0 +1,155 @@
+/* core/css/animations.css */
+
+/* Page Transitions */
+.page-enter {
+    animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.stagger-1 {
+    animation-delay: 0.05s;
+}
+
+.stagger-2 {
+    animation-delay: 0.15s;
+}
+
+.stagger-3 {
+    animation-delay: 0.25s;
+}
+
+.stagger-4 {
+    animation-delay: 0.35s;
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ripple Effect */
+.ripple-btn {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.ripple-span {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-anim 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+}
+
+@keyframes ripple-anim {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Loaders */
+.fullscreen-loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 248, 245, 0.85);
+    /* surface color with opacity */
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.fullscreen-loader.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(125, 87, 0, 0.15);
+    /* primary color */
+    border-radius: 50%;
+    border-top-color: #7d5700;
+    animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Skeletons */
+.skeleton-box {
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: #eee0d7 !important;
+    /* surface-variant */
+    color: transparent !important;
+    border-color: transparent !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    box-shadow: none !important;
+    border-radius: 1rem;
+}
+
+.skeleton-box * {
+    opacity: 0 !important;
+}
+
+.skeleton-box::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0,
+            rgba(255, 255, 255, 0.5) 20%,
+            rgba(255, 255, 255, 0.8) 60%,
+            rgba(255, 255, 255, 0));
+    animation: shimmer 1.5s infinite;
+    content: '';
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Interactive elements enhanced states */
+button,
+a,
+.method-card,
+.pocket-card,
+.grid>div {
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, background-color 0.2s ease, filter 0.2s ease;
+}
+
+button:active:not(:disabled),
+a:active:not(:disabled),
+.method-card:active {
+    transform: scale(0.96);
+}
+
+/* Inputs Focus state enhanced */
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0 0 0 4px rgba(125, 87, 0, 0.15) !important;
+    border-color: #7d5700 !important;
+    transition: all 0.2s ease;
+}
